@@ -34,20 +34,20 @@ namespace Tobii.XR.Examples.DevTools
         private void Start()
         {
             _renderer = GetComponent<Renderer>();
-            _originalColor = _renderer.material.color;
+            _originalColor = _renderer.sharedMaterial.color;
             _targetColor = _originalColor;
         }
 
         private void Update()
         {
             //This lerp will fade the color of the object
-            if (_renderer.material.HasProperty(_baseColor)) // new rendering pipeline (lightweight, hd, universal...)
+            if (_renderer.sharedMaterial.HasProperty(_baseColor)) // new rendering pipeline (lightweight, hd, universal...)
             {
-                _renderer.material.SetColor(_baseColor, Color.Lerp(_renderer.material.GetColor(_baseColor), _targetColor, Time.deltaTime * (1 / animationTime)));
+                _renderer.sharedMaterial.SetColor(_baseColor, Color.Lerp(_renderer.sharedMaterial.GetColor(_baseColor), _targetColor, Time.deltaTime * (1 / animationTime)));
             }
             else // old standard rendering pipline
             {
-                _renderer.material.color = Color.Lerp(_renderer.material.color, _targetColor, Time.deltaTime * (1 / animationTime));
+                _renderer.sharedMaterial.color = Color.Lerp(_renderer.sharedMaterial.color, _targetColor, Time.deltaTime * (1 / animationTime));
             }
         }
     }
