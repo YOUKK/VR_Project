@@ -1203,6 +1203,7 @@ GameObject:
   - component: {fileID: 6626324895380069359}
   - component: {fileID: 6626324895380069358}
   - component: {fileID: 6626324895380069356}
+  - component: {fileID: 6402083662678449430}
   m_Layer: 0
   m_Name: Hand_Rigging
   m_TagString: Untagged
@@ -1219,7 +1220,7 @@ Transform:
   m_GameObject: {fileID: 7226346416404040464}
   m_LocalRotation: {x: -0.7071068, y: 0.7071068, z: -0, w: 0}
   m_LocalPosition: {x: -0.1, y: 0, z: 0.1}
-  m_LocalScale: {x: -0.2, y: 0.2, z: 0.2}
+  m_LocalScale: {x: 0.2, y: 0.20000002, z: 0.2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 1419238858993008948}
@@ -1308,6 +1309,18 @@ MonoBehaviour:
   - {fileID: 5954472784351671187}
   - {fileID: 2863734435991379523}
   - {fileID: 440080992107859361}
+--- !u!114 &6402083662678449430
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7226346416404040464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4bdc74c8894d6064bb5ac465146a2cd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7667111670005448654
 GameObject:
   m_ObjectHideFlags: 0
