@@ -40,6 +40,8 @@ namespace Tobii.XR.Examples.DevTools
 
         private void Update()
         {
+            var eyeTrackingTime = TobiiXR.GetEyeTrackingData(TobiiXR_TrackingSpace.World).Timestamp;
+            Debug.Log(eyeTrackingTime);
             //This lerp will fade the color of the object
             if (_renderer.sharedMaterial.HasProperty(_baseColor)) // new rendering pipeline (lightweight, hd, universal...)
             {
