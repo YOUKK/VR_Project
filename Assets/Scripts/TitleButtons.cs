@@ -21,7 +21,10 @@ public class TitleButtons : MonoBehaviour
     void Start()
     {
         //startButton.onClick.AddListener(() => Manager.Instance.MoveScene("Scene_KYK", "Scenario1"));
-        startButton.onClick.AddListener(() => SceneManager.LoadScene("Scenario1_RandomObject"));
+        startButton.onClick.AddListener(() => {
+            Debug.Log("button 테스트");
+            SceneManager.LoadScene("Game");
+        });
 
         //StartCoroutine(LeanAnimation()); //로고 애니메이션 효과
     }
@@ -41,11 +44,4 @@ public class TitleButtons : MonoBehaviour
             yield return null;
         }
     }
-
-    void Update()
-    {
-        
-    }
-
-
 }
