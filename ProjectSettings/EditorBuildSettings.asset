@@ -14,6 +14,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scenario1.unity
     guid: 082007a7b5019b84290c294dcb059856
+  - enabled: 1
+    path: Assets/Scenes/Scene_YYJ.unity
+    guid: 82a79114e33a8db4789143a2369a8baa
+  - enabled: 1
+    path: Assets/Scenes/Scenario1_RandomObject.unity
+    guid: 77e711ecab0002643b74a72928f9778a
+  - enabled: 1
+    path: Assets/Scenes/Scenario1_Result.unity
+    guid: 16737248c69545449b976a35f8f732d2
+  - enabled: 1
+    path: Assets/Scenes/Scene_CJH.unity
+    guid: 2004b304c0bef994594da2bdcf37a2d2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ba99fe3a5e1f9aa42a5fa05d54cbeb3b,
       type: 2}
