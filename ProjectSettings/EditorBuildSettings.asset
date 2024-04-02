@@ -18,6 +18,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_YYJ.unity
     guid: 82a79114e33a8db4789143a2369a8baa
   - enabled: 1
+    path: Assets/Scenes/Game.unity
+    guid: dd3fe0106996be0409ce30134feaf028
+  - enabled: 1
     path: Assets/Scenes/Scenario1_RandomObject.unity
     guid: 77e711ecab0002643b74a72928f9778a
   - enabled: 1
