@@ -1,11 +1,8 @@
-﻿// Copyright © 2018 – Property of Tobii AB (publ) - All Rights Reserved
-
-using Tobii.G2OM;
+﻿using Tobii.G2OM;
 using UnityEngine;
 
 namespace Tobii.XR.Examples.DevTools
 {
-    //Monobehaviour which implements the "IGazeFocusable" interface, meaning it will be called on when the object receives focus
     public class HighlightAtGaze : MonoBehaviour, IGazeFocusable
     {
         private static readonly int _baseColor = Shader.PropertyToID("_BaseColor");
@@ -15,35 +12,28 @@ namespace Tobii.XR.Examples.DevTools
         private Renderer _renderer;
         private Color _originalColor;
         private Color _targetColor;
-        private float focusStartTime; // 포커스 시작 시간을 기록할 변수
-        private float focusEndTime; // 포커스 종료 시간을 기록할 변수
+        private static float lastGazeLeaveTime;
+        private static GameObject lastGazedObject;
+        private float gazeEnterTime;
 
-        //The method of the "IGazeFocusable" interface, which will be called when this object receives or loses focus
         public void GazeFocusChanged(bool hasFocus)
         {
-            
-            //If this object received focus, fade the object's color to highlight color
             if (hasFocus)
             {
-                if (_targetColor != highlightColor)
+                gazeEnterTime = Time.time;
+                if (lastGazedObject != null && lastGazedObject != gameObject)
                 {
-                    focusStartTime = Time.time;
+                    float gazeTransitionTime = gazeEnterTime - lastGazeLeaveTime;
+                    Debug.Log($"Gaze moved from {lastGazedObject.name} to {gameObject.name} in {gazeTransitionTime} seconds.");
                 }
+                lastGazedObject = gameObject;
                 _targetColor = highlightColor;
             }
-            //If this object lost focus, fade the object's color to it's original color
             else
             {
-                focusEndTime = Time.time;
-                float focusDurationInSeconds = focusEndTime - focusStartTime;
-                if (focusDurationInSeconds >= 0)
-                {
-                    Debug.Log("Focus duration: " + focusDurationInSeconds + " seconds");
-                }
-                else
-                {
-                    Debug.LogWarning("Invalid focus duration: " + focusDurationInSeconds + " seconds. Possible event order issue.");
-                }
+                lastGazeLeaveTime = Time.time;
+                float gazeDuration = lastGazeLeaveTime - gazeEnterTime;
+                Debug.Log($"{gameObject.name} was gazed at for {gazeDuration} seconds.");
                 _targetColor = _originalColor;
             }
         }
@@ -51,21 +41,19 @@ namespace Tobii.XR.Examples.DevTools
         private void Start()
         {
             _renderer = GetComponent<Renderer>();
-            _originalColor = _renderer.sharedMaterial.color;
+            _originalColor = _renderer.material.color;
             _targetColor = _originalColor;
-            
         }
 
         private void Update()
         {
-            //This lerp will fade the color of the object
-            if (_renderer.sharedMaterial.HasProperty(_baseColor)) // new rendering pipeline (lightweight, hd, universal...)
+            if (_renderer.material.HasProperty(_baseColor))
             {
-                _renderer.sharedMaterial.SetColor(_baseColor, Color.Lerp(_renderer.sharedMaterial.GetColor(_baseColor), _targetColor, Time.deltaTime * (1 / animationTime)));
+                _renderer.material.SetColor(_baseColor, Color.Lerp(_renderer.material.GetColor(_baseColor), _targetColor, Time.deltaTime / animationTime));
             }
-            else // old standard rendering pipline
+            else
             {
-                _renderer.sharedMaterial.color = Color.Lerp(_renderer.sharedMaterial.color, _targetColor, Time.deltaTime * (1 / animationTime));
+                _renderer.material.color = Color.Lerp(_renderer.material.color, _targetColor, Time.deltaTime / animationTime);
             }
         }
     }
