@@ -4270,7 +4270,6 @@ GameObject:
   - component: {fileID: 195748258}
   - component: {fileID: 195748261}
   - component: {fileID: 195748260}
-  - component: {fileID: 195748259}
   m_Layer: 5
   m_Name: Text - 2
   m_TagString: Untagged
@@ -4298,24 +4297,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &195748259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 195748257}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75fe361075891749995c4fdc3b4006f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScriptTxt: {fileID: 195748260}
-  LeftDirectInteractor: {fileID: 4747709072240183180}
-  RightDirectInteractor: {fileID: 4747709072653494498}
-  LeftRayInteractor: {fileID: 150456674}
-  RightRayInteractor: {fileID: 1557339191}
-  TutorialStuff: {fileID: 363756464}
 --- !u!114 &195748260
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4565,7 +4546,6 @@ GameObject:
   - component: {fileID: 237455570}
   - component: {fileID: 237455573}
   - component: {fileID: 237455572}
-  - component: {fileID: 237455571}
   m_Layer: 5
   m_Name: Text - 3
   m_TagString: Untagged
@@ -4593,24 +4573,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &237455571
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 237455569}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75fe361075891749995c4fdc3b4006f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScriptTxt: {fileID: 237455572}
-  LeftDirectInteractor: {fileID: 4747709072240183180}
-  RightDirectInteractor: {fileID: 4747709072653494498}
-  LeftRayInteractor: {fileID: 150456674}
-  RightRayInteractor: {fileID: 1557339191}
-  TutorialStuff: {fileID: 363756464}
 --- !u!114 &237455572
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -8769,7 +8731,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: -0.2}
+  m_AnchoredPosition: {x: 0, y: -0.361}
   m_SizeDelta: {x: 70, y: 15}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &417941307
@@ -8849,8 +8811,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: -17.5, y: -4}
+  m_SizeDelta: {x: -36, y: -8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &419901403
 MonoBehaviour:
@@ -8896,9 +8858,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 237455571}
+      - m_Target: {fileID: 682182197}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
-        m_MethodName: CntUp
+        m_MethodName: Button3
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -9567,7 +9529,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -11043,11 +11005,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptTxt: {fileID: 682182198}
+  ButtonTxt1: {fileID: 1682674503}
+  ButtonTxt2: {fileID: 195748260}
+  ButtonTxt3: {fileID: 237455572}
+  ButtonTxt4: {fileID: 1672356397}
   LeftDirectInteractor: {fileID: 4747709072240183180}
   RightDirectInteractor: {fileID: 4747709072653494498}
   LeftRayInteractor: {fileID: 150456674}
   RightRayInteractor: {fileID: 1557339191}
   TutorialStuff: {fileID: 363756464}
+  ButtonStuff: {fileID: 417941305}
 --- !u!114 &682182198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16135,9 +16102,9 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
-  m_Pivot: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -8.5, y: 4}
+  m_SizeDelta: {x: -36, y: -8}
+  m_Pivot: {x: 0.25, y: 0.5}
 --- !u!114 &1142034933
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -16182,9 +16149,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1682674502}
+      - m_Target: {fileID: 682182197}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
-        m_MethodName: CntUp
+        m_MethodName: Button1
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -24267,8 +24234,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 17.5, y: 4}
+  m_SizeDelta: {x: -36, y: -8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1352546376
 MonoBehaviour:
@@ -24314,9 +24281,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 195748259}
+      - m_Target: {fileID: 682182197}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
-        m_MethodName: CntUp
+        m_MethodName: Button2
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -33395,7 +33362,6 @@ GameObject:
   - component: {fileID: 1672356395}
   - component: {fileID: 1672356398}
   - component: {fileID: 1672356397}
-  - component: {fileID: 1672356396}
   m_Layer: 5
   m_Name: Text - 4
   m_TagString: Untagged
@@ -33423,24 +33389,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1672356396
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1672356394}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75fe361075891749995c4fdc3b4006f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScriptTxt: {fileID: 1672356397}
-  LeftDirectInteractor: {fileID: 4747709072240183180}
-  RightDirectInteractor: {fileID: 4747709072653494498}
-  LeftRayInteractor: {fileID: 150456674}
-  RightRayInteractor: {fileID: 1557339191}
-  TutorialStuff: {fileID: 363756464}
 --- !u!114 &1672356397
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33667,7 +33615,6 @@ GameObject:
   - component: {fileID: 1682674501}
   - component: {fileID: 1682674504}
   - component: {fileID: 1682674503}
-  - component: {fileID: 1682674502}
   m_Layer: 5
   m_Name: Text - 1
   m_TagString: Untagged
@@ -33695,24 +33642,6 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &1682674502
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1682674500}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e75fe361075891749995c4fdc3b4006f, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ScriptTxt: {fileID: 1682674503}
-  LeftDirectInteractor: {fileID: 4747709072240183180}
-  RightDirectInteractor: {fileID: 4747709072653494498}
-  LeftRayInteractor: {fileID: 150456674}
-  RightRayInteractor: {fileID: 1557339191}
-  TutorialStuff: {fileID: 363756464}
 --- !u!114 &1682674503
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -35458,8 +35387,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 0}
-  m_SizeDelta: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 17.5, y: -4}
+  m_SizeDelta: {x: -36, y: -8}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1872142119
 MonoBehaviour:
@@ -35505,9 +35434,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1672356396}
+      - m_Target: {fileID: 682182197}
         m_TargetAssemblyTypeName: Tutorial, Assembly-CSharp
-        m_MethodName: CntUp
+        m_MethodName: Button4
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
