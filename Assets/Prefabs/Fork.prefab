@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2644596085760653049}
   m_Layer: 0
   m_Name: Fork
-  m_TagString: Untagged
+  m_TagString: Fork
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
