@@ -2431,11 +2431,20 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptTxt: {fileID: 1785280561546685082}
+  ButtonTxt1: {fileID: 0}
+  ButtonTxt2: {fileID: 0}
+  ButtonTxt3: {fileID: 0}
+  ButtonTxt4: {fileID: 0}
   LeftDirectInteractor: {fileID: 0}
   RightDirectInteractor: {fileID: 0}
   LeftRayInteractor: {fileID: 0}
   RightRayInteractor: {fileID: 0}
   TutorialStuff: {fileID: 0}
+  ButtonStuff: {fileID: 0}
+  ScriptTxtBox: {fileID: 0}
+  newSprite: {fileID: 0}
+  CountTxt: {fileID: 0}
+  CountBackground: {fileID: 0}
 --- !u!1 &1008098071
 GameObject:
   m_ObjectHideFlags: 0
@@ -3467,7 +3476,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1366064287}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 80ac47f88e635844c857227849cf92f2, type: 3}
+  m_Script: {fileID: 11500000, guid: 1017bd56aefea24498407068d4d13a74, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   homeButton: {fileID: 2131665578}
