@@ -1348,6 +1348,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &60183117
 GameObject:
   m_ObjectHideFlags: 0
@@ -1449,6 +1450,8 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &64118543
 GameObject:
   m_ObjectHideFlags: 0
@@ -3916,9 +3919,13 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
+<<<<<<< HEAD
   - {fileID: 2129293895}
   - {fileID: 2128510516}
   - {fileID: 60183118}
+=======
+  - {fileID: 363756465}
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
   m_Father: {fileID: 186925592}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4115,6 +4122,7 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+<<<<<<< HEAD
 --- !u!1 &161600591
 GameObject:
   m_ObjectHideFlags: 0
@@ -4191,6 +4199,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 161600591}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &165507110
 GameObject:
   m_ObjectHideFlags: 0
@@ -4438,6 +4448,7 @@ Transform:
   m_Father: {fileID: 774234207}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &195748257
 GameObject:
   m_ObjectHideFlags: 0
@@ -4576,6 +4587,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 195748257}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!4 &219181526
 Transform:
   m_ObjectHideFlags: 0
@@ -4714,6 +4727,7 @@ Transform:
   m_Father: {fileID: 867779749}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+<<<<<<< HEAD
 --- !u!1 &237455569
 GameObject:
   m_ObjectHideFlags: 0
@@ -4852,6 +4866,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 237455569}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &241486377
 GameObject:
   m_ObjectHideFlags: 0
@@ -8044,6 +8060,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 363756464}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 20, z: -100.000015}
   m_LocalScale: {x: 100.000015, y: 100, z: 100.000015}
   m_ConstrainProportionsScale: 0
@@ -8052,6 +8069,16 @@ Transform:
   - {fileID: 417941306}
   m_Father: {fileID: 2128510516}
   m_RootOrder: 1
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 322246892}
+  - {fileID: 2128510516}
+  m_Father: {fileID: 156368673}
+  m_RootOrder: 0
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1818360608 &363756466
 PositionConstraint:
@@ -8870,6 +8897,7 @@ Transform:
   m_Father: {fileID: 401472341}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &417941305
 GameObject:
   m_ObjectHideFlags: 0
@@ -9086,6 +9114,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 419901401}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &434679562
 GameObject:
   m_ObjectHideFlags: 0
@@ -11158,7 +11188,11 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 682182195}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+<<<<<<< HEAD
   m_LocalPosition: {x: 0, y: 0, z: 0.000011920931}
+=======
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -11183,6 +11217,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   ScriptTxt: {fileID: 682182198}
+<<<<<<< HEAD
   ButtonTxt1: {fileID: 1682674503}
   ButtonTxt2: {fileID: 195748260}
   ButtonTxt3: {fileID: 237455572}
@@ -11197,6 +11232,8 @@ MonoBehaviour:
   ButtonStuff: {fileID: 417941305}
   CountTxt: {fileID: 1871696292}
   CountBackground: {fileID: 756543123}
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!114 &682182198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11601,6 +11638,7 @@ Transform:
   m_Father: {fileID: 1654331683}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &739386513 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 6788538757290762323, guid: ad4137f595ec8e2449cacca9df7d3735,
@@ -11683,6 +11721,8 @@ RectTransform:
   m_AnchoredPosition: {x: 477, y: 146.9}
   m_SizeDelta: {x: 70, y: 70}
   m_Pivot: {x: 0.5, y: 0.5}
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &757735542
 GameObject:
   m_ObjectHideFlags: 0
@@ -13799,7 +13839,11 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
+<<<<<<< HEAD
   m_IsActive: 0
+=======
+  m_IsActive: 1
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!4 &930105105
 Transform:
   m_ObjectHideFlags: 0
@@ -16329,6 +16373,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: be8ae8d3a4961ee448341a6d5c1f92eb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+<<<<<<< HEAD
 --- !u!1 &1142034931
 GameObject:
   m_ObjectHideFlags: 0
@@ -16463,6 +16508,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1142034931}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &1144284175
 GameObject:
   m_ObjectHideFlags: 0
@@ -24461,6 +24508,7 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &1352546374
 GameObject:
   m_ObjectHideFlags: 0
@@ -24595,6 +24643,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1352546374}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &1354621992 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7226346416404040464, guid: 06b1bbce17d1c06419113c7b572fe88a,
@@ -33615,6 +33665,7 @@ ReflectionProbe:
   m_UseOcclusionCulling: 1
   m_Importance: 1
   m_CustomBakedTexture: {fileID: 0}
+<<<<<<< HEAD
 --- !u!1 &1672356394
 GameObject:
   m_ObjectHideFlags: 0
@@ -33753,6 +33804,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1672356394}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &1681413362
 GameObject:
   m_ObjectHideFlags: 0
@@ -33868,6 +33921,7 @@ Transform:
   m_Father: {fileID: 1654331683}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+<<<<<<< HEAD
 --- !u!1 &1682674500
 GameObject:
   m_ObjectHideFlags: 0
@@ -34006,6 +34060,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1682674500}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!4 &1712579169
 Transform:
   m_ObjectHideFlags: 0
@@ -35614,6 +35670,7 @@ MonoBehaviour:
   m_ShadowLayerMask: 1
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
+<<<<<<< HEAD
 --- !u!1 &1871696291
 GameObject:
   m_ObjectHideFlags: 0
@@ -35886,6 +35943,8 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1872142117}
   m_CullTransparentMesh: 1
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!1 &1882912296
 GameObject:
   m_ObjectHideFlags: 0
@@ -40325,12 +40384,20 @@ RectTransform:
   m_GameObject: {fileID: 2128510515}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 1}
+<<<<<<< HEAD
   m_LocalScale: {x: 0.009999999, y: 0.01, z: 0.009999999}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 762137617}
   - {fileID: 363756465}
   m_Father: {fileID: 156368673}
+=======
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 762137617}
+  m_Father: {fileID: 363756465}
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
@@ -40378,6 +40445,7 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+<<<<<<< HEAD
 --- !u!1 &2129293894
 GameObject:
   m_ObjectHideFlags: 0
@@ -40480,6 +40548,8 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+=======
+>>>>>>> f265a761b72a9f59356982385661f7670e7c939a
 --- !u!33 &2143561344
 MeshFilter:
   m_ObjectHideFlags: 0
