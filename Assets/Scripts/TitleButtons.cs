@@ -26,6 +26,13 @@ public class TitleButtons : MonoBehaviour
             SceneManager.LoadScene("Game");
         });
 
+        settingButton.onClick.AddListener(() => {
+            Debug.Log("button 테스트");
+            SceneManager.LoadScene("Scene_SoundSetting");
+        });
+
+
+
         //StartCoroutine(LeanAnimation()); //로고 애니메이션 효과
     }
 
