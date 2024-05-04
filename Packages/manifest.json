@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "com.tobii.xr.sdk": "file:C:/Users/emsys/Downloads/TobiiXRSDK_3.0.1.179",
     "com.unity.animation.rigging": "1.1.1",
     "com.unity.burst": "1.8.11",
     "com.unity.collab-proxy": "2.2.0",
