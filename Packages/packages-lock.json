@@ -26,14 +26,6 @@
       "source": "embedded",
       "dependencies": {}
     },
-    "com.tobii.xr.sdk": {
-      "version": "file:C:/Users/emsys/Downloads/TobiiXRSDK_3.0.1.179",
-      "depth": 0,
-      "source": "local",
-      "dependencies": {
-        "com.unity.xr.management": "3.2.16"
-      }
-    },
     "com.unity.animation.rigging": {
       "version": "1.1.1",
       "depth": 0,
