@@ -21,17 +21,24 @@ public class OrganizeSpoonFork : MonoBehaviour
         
     }
 
+	private void Organize(Collider other)
+	{
+		other.transform.parent = SFSpot[currentTurn].transform;
+		currentTurn++;
+		other.transform.localPosition = Vector3.zero;
+		other.transform.localEulerAngles = Vector3.zero;
+
+		other.GetComponent<BoxCollider>().enabled = false;
+	}
 
 	private void OnTriggerEnter(Collider other)
 	{
 		if ((other.CompareTag("Spoon") || other.CompareTag("Fork")) && !Manager.IsGrabGet())
 		{
-			other.transform.parent = SFSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
-
-			other.GetComponent<BoxCollider>().enabled = false;
+			if (currentTurn < 11)
+				Organize(other);
+			else
+				other.gameObject.SetActive(false);
 		}
 	}
 
@@ -39,12 +46,10 @@ public class OrganizeSpoonFork : MonoBehaviour
 	{
 		if ((other.CompareTag("Spoon") || other.CompareTag("Fork")) && !Manager.IsGrabGet())
 		{
-			other.transform.parent = SFSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
-
-			other.GetComponent<BoxCollider>().enabled = false;
+			if (currentTurn < 11)
+				Organize(other);
+			else
+				other.gameObject.SetActive(false);
 		}
 	}
 }
