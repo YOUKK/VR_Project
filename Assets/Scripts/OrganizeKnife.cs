@@ -20,29 +20,36 @@ public class OrganizeKnife : MonoBehaviour
 
 	}
 
+	private void Organize(Collider other)
+	{
+		other.transform.parent = knifesSpot[currentTurn].transform;
+		currentTurn++;
+		other.transform.localPosition = Vector3.zero;
+		other.transform.localEulerAngles = Vector3.zero;
+
+		other.GetComponent<BoxCollider>().enabled = false;
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Knife") && !Manager.IsGrabGet())
 		{
-			other.transform.parent = knifesSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
-
-			other.GetComponent<BoxCollider>().enabled = false;
+			if (currentTurn < 5)
+				Organize(other);
+			else
+				other.gameObject.SetActive(false);
 		}
+
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
 		if (other.CompareTag("Knife") && !Manager.IsGrabGet())
 		{
-			other.transform.parent = knifesSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
-
-			other.GetComponent<BoxCollider>().enabled = false;
-		}
+			if (currentTurn < 5)
+				Organize(other);
+			else
+				other.gameObject.SetActive(false);
+		}	
 	}
 }

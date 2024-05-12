@@ -21,16 +21,24 @@ public class OrganizeDish : MonoBehaviour
         
     }
 
+	private void Organize(Collider other)
+	{
+		other.transform.parent = dishesSpot[currentTurn].transform;
+		currentTurn++;
+		other.transform.localPosition = Vector3.zero;
+		other.transform.localEulerAngles = Vector3.zero;
+
+		other.GetComponent<BoxCollider>().enabled = false;
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
 		{
-			other.transform.parent = dishesSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
-
-			other.GetComponent<BoxCollider>().enabled = false;
+			if (currentTurn < 21)
+				Organize(other);
+			else
+				other.gameObject.SetActive(false);
 		}
 	}
 
@@ -38,12 +46,10 @@ public class OrganizeDish : MonoBehaviour
 	{
 		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
 		{
-			other.transform.parent = dishesSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
-
-			other.GetComponent<BoxCollider>().enabled = false;
+			if(currentTurn < 21)
+				Organize(other);
+			else
+				other.gameObject.SetActive(false);
 		}
 	}
 }

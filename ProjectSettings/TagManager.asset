@@ -8,6 +8,7 @@ TagManager:
   - Spoon
   - Fork
   - Knife
+  - Cube
   layers:
   - Default
   - TransparentFX
