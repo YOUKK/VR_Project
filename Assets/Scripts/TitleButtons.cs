@@ -26,9 +26,19 @@ public class TitleButtons : MonoBehaviour
             SceneManager.LoadScene("Game");
         });
 
+        ruleButton.onClick.AddListener(() =>
+        {
+            SceneManager.LoadScene("Tutorial");
+        });
+
         settingButton.onClick.AddListener(() => {
             Debug.Log("button 테스트");
             SceneManager.LoadScene("Scene_SoundSetting");
+        });
+
+        exitButton.onClick.AddListener(() =>
+        {
+            Application.Quit();
         });
 
 
