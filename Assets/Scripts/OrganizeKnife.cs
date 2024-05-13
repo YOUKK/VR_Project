@@ -5,7 +5,7 @@ public class OrganizeKnife : MonoBehaviour
 {
 	private List<GameObject> knifesSpot = new List<GameObject>();
 
-	private int currentTurn = 0;
+    public int currentTurn = 0;
 
 	void Start()
 	{

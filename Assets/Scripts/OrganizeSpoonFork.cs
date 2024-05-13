@@ -6,7 +6,7 @@ public class OrganizeSpoonFork : MonoBehaviour
 {
     private List<GameObject> SFSpot = new List<GameObject>(); // Spoon Fork
 
-    private int currentTurn = 0;
+    public int currentTurn = 0;
 
     void Start()
     {

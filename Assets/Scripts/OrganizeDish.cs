@@ -6,7 +6,7 @@ public class OrganizeDish : MonoBehaviour
 {
     private List<GameObject> dishesSpot = new List<GameObject>(); // 접시가 정리될 위치를 구할 접시들
 
-    private int currentTurn = 0;
+    public int currentTurn = 0;
 
     void Start()
     {
