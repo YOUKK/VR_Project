@@ -6,9 +6,14 @@ public class OrganizeSpoonFork : MonoBehaviour
 {
     private List<GameObject> SFSpot = new List<GameObject>(); // Spoon Fork
 
-    public int currentTurn = 0;
+    public int currentTurn = 0; // forkNum + spoonNum
+	public int forkNum = 0;
+	public int spoonNum = 0;
 
-    void Start()
+	[SerializeField]
+	private MissionCheck missionCheck;
+
+	void Start()
     {
         for (int i = 0; i < 11; i++)
         {
@@ -38,7 +43,19 @@ public class OrganizeSpoonFork : MonoBehaviour
 			if (currentTurn < 11)
 				Organize(other);
 			else
+			{
+				currentTurn++;
 				other.gameObject.SetActive(false);
+			}
+
+			// 스푼, 포크 정리 개수 구하기
+			if (other.CompareTag("Spoon"))
+				spoonNum++;
+			else
+				forkNum++;
+
+			if (spoonNum > 5 && forkNum > 5)
+				missionCheck.SFCheckOn();
 		}
 	}
 
@@ -49,7 +66,19 @@ public class OrganizeSpoonFork : MonoBehaviour
 			if (currentTurn < 11)
 				Organize(other);
 			else
+			{
+				currentTurn++;
 				other.gameObject.SetActive(false);
+			}
+
+			// 스푼, 포크 정리 개수 구하기
+			if (other.CompareTag("Spoon"))
+				spoonNum++;
+			else
+				forkNum++;
+
+			if (spoonNum > 5 && forkNum > 5)
+				missionCheck.SFCheckOn();
 		}
 	}
 }

@@ -7,6 +7,9 @@ public class OrganizeKnife : MonoBehaviour
 
     public int currentTurn = 0;
 
+	[SerializeField]
+	private MissionCheck missionCheck;
+
 	void Start()
 	{
 		for (int i = 0; i < 5; i++)
@@ -37,7 +40,15 @@ public class OrganizeKnife : MonoBehaviour
 			if (currentTurn < 5)
 				Organize(other);
 			else
+			{
+				currentTurn++;
 				other.gameObject.SetActive(false);
+			}
+
+			if(currentTurn > 10)
+			{
+				missionCheck.KnifeCheckOn();
+			}
 		}
 
 	}
@@ -49,7 +60,15 @@ public class OrganizeKnife : MonoBehaviour
 			if (currentTurn < 5)
 				Organize(other);
 			else
+			{
+				currentTurn++;
 				other.gameObject.SetActive(false);
+			}
+
+			if (currentTurn > 10)
+			{
+				missionCheck.KnifeCheckOn();
+			}
 		}	
 	}
 }
