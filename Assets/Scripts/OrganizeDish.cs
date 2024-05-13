@@ -8,7 +8,10 @@ public class OrganizeDish : MonoBehaviour
 
     public int currentTurn = 0;
 
-    void Start()
+	[SerializeField]
+	private MissionCheck missionCheck;
+
+	void Start()
     {
         for(int i = 0; i < 21; i++)
 		{
@@ -38,7 +41,13 @@ public class OrganizeDish : MonoBehaviour
 			if (currentTurn < 21)
 				Organize(other);
 			else
+			{
+				currentTurn++;
 				other.gameObject.SetActive(false);
+			}
+
+			if (currentTurn > 10)
+				missionCheck.DishCheckOn();
 		}
 	}
 
@@ -46,10 +55,16 @@ public class OrganizeDish : MonoBehaviour
 	{
 		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
 		{
-			if(currentTurn < 21)
+			if (currentTurn < 21)
 				Organize(other);
 			else
+			{
+				currentTurn++;
 				other.gameObject.SetActive(false);
+			}
+
+			if (currentTurn > 10)
+				missionCheck.DishCheckOn();
 		}
 	}
 }
