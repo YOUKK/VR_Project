@@ -28,10 +28,6 @@ public class Tutorial : MonoBehaviour
     public GameObject CountBackground;
     private int countdownTime = 10;
 
-    GameObject OrganizeKnife = GameObject.Find("knife-block");
-    GameObject OrganizeDish = GameObject.Find("dish-drainer");
-    GameObject OrganizeSpoonFork = GameObject.Find("SInk");
-
 // Start is called before the first frame update
 void Start()
     {
