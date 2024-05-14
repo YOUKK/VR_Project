@@ -6280,6 +6280,12 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 295732690}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &312638660 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6788538757290762323, guid: ad4137f595ec8e2449cacca9df7d3735,
+    type: 3}
+  m_PrefabInstance: {fileID: 854733966}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &322246892 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 6788538757290762322, guid: ad4137f595ec8e2449cacca9df7d3735,
@@ -13302,11 +13308,11 @@ MonoBehaviour:
   ButtonTxt2: {fileID: 195748260}
   ButtonTxt3: {fileID: 237455572}
   ButtonTxt4: {fileID: 1672356397}
-  LeftDirectInteractor: {fileID: 0}
-  RightDirectInteractor: {fileID: 0}
-  LeftRayInteractor: {fileID: 0}
-  RightRayInteractor: {fileID: 0}
-  TutorialStuff: {fileID: 0}
+  LeftDirectInteractor: {fileID: 4747709072240183180}
+  RightDirectInteractor: {fileID: 4747709072653494498}
+  LeftRayInteractor: {fileID: 150456674}
+  RightRayInteractor: {fileID: 1557339191}
+  TutorialStuff: {fileID: 312638660}
   ButtonStuff: {fileID: 417941305}
   ResultStuff: {fileID: 4837468458055308484}
   ScriptTxtBox: {fileID: 762137616}
