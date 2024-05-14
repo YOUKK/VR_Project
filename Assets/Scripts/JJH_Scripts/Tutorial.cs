@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.Serialization;
 
 public class Tutorial : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Tutorial : MonoBehaviour
     public GameObject RightRayInteractor;
     public GameObject TutorialStuff;
     public GameObject ButtonStuff;
+    public GameObject ResultStuff;
     int clickCnt = 0;
     bool ButtonFlag = false;
 
@@ -24,10 +26,10 @@ public class Tutorial : MonoBehaviour
     public Sprite newSprite;
     public TextMeshProUGUI CountTxt;
     public GameObject CountBackground;
-    private int countdownTime = 20;
+    private int countdownTime = 10;
 
-    // Start is called before the first frame update
-    void Start()
+// Start is called before the first frame update
+void Start()
     {
         ScriptTxt.text = "안녕하세요! 저는 당신을 위한 특별한 도우미입니다.\n오늘은 우리 함께 재미있는 미션을 수행해 볼 거에요.";
         ButtonTxt1.text = "버튼1";
@@ -138,8 +140,21 @@ public class Tutorial : MonoBehaviour
             {
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
+            if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 1 &&
+                GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&
+                GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn == 0)
+            {
+                ResultStuff.SetActive(true);
+                Debug.Log("성공");
+                Debug.Log(countdownTime);
+                break;
+            }
+            if (countdownTime == 0)
+            {
+                ResultStuff.SetActive(true);
+                Debug.Log("실패");
+            }
         }
-
     }
 
     IEnumerator ShakeText(float duration, float magnitude)

@@ -6,9 +6,12 @@ public class OrganizeDish : MonoBehaviour
 {
     private List<GameObject> dishesSpot = new List<GameObject>(); // 접시가 정리될 위치를 구할 접시들
 
-    private int currentTurn = 0;
+    public int currentTurn = 0;
 
-    void Start()
+	[SerializeField]
+	private MissionCheck missionCheck;
+
+	void Start()
     {
         for(int i = 0; i < 21; i++)
 		{
@@ -21,16 +24,30 @@ public class OrganizeDish : MonoBehaviour
         
     }
 
+	private void Organize(Collider other)
+	{
+		other.transform.parent = dishesSpot[currentTurn].transform;
+		currentTurn++;
+		other.transform.localPosition = Vector3.zero;
+		other.transform.localEulerAngles = Vector3.zero;
+
+		other.GetComponent<BoxCollider>().enabled = false;
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
 		{
-			other.transform.parent = dishesSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
+			if (currentTurn < 21)
+				Organize(other);
+			else
+			{
+				currentTurn++;
+				other.gameObject.SetActive(false);
+			}
 
-			other.GetComponent<BoxCollider>().enabled = false;
+			if (currentTurn > 10)
+				missionCheck.DishCheckOn();
 		}
 	}
 
@@ -38,12 +55,16 @@ public class OrganizeDish : MonoBehaviour
 	{
 		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
 		{
-			other.transform.parent = dishesSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
+			if (currentTurn < 21)
+				Organize(other);
+			else
+			{
+				currentTurn++;
+				other.gameObject.SetActive(false);
+			}
 
-			other.GetComponent<BoxCollider>().enabled = false;
+			if (currentTurn > 10)
+				missionCheck.DishCheckOn();
 		}
 	}
 }
