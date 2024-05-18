@@ -26,7 +26,7 @@ public class Tutorial : MonoBehaviour
     public Sprite newSprite;
     public TextMeshProUGUI CountTxt;
     public GameObject CountBackground;
-    private int countdownTime = 10;
+    private int countdownTime = 60;
 
 // Start is called before the first frame update
 void Start()
