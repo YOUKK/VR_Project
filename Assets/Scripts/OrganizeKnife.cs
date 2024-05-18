@@ -5,7 +5,10 @@ public class OrganizeKnife : MonoBehaviour
 {
 	private List<GameObject> knifesSpot = new List<GameObject>();
 
-	private int currentTurn = 0;
+    public int currentTurn = 0;
+
+	[SerializeField]
+	private MissionCheck missionCheck;
 
 	void Start()
 	{
@@ -20,29 +23,52 @@ public class OrganizeKnife : MonoBehaviour
 
 	}
 
+	private void Organize(Collider other)
+	{
+		other.transform.parent = knifesSpot[currentTurn].transform;
+		currentTurn++;
+		other.transform.localPosition = Vector3.zero;
+		other.transform.localEulerAngles = Vector3.zero;
+
+		other.GetComponent<BoxCollider>().enabled = false;
+	}
+
 	private void OnTriggerEnter(Collider other)
 	{
 		if (other.CompareTag("Knife") && !Manager.IsGrabGet())
 		{
-			other.transform.parent = knifesSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
+			if (currentTurn < 5)
+				Organize(other);
+			else
+			{
+				currentTurn++;
+				other.gameObject.SetActive(false);
+			}
 
-			other.GetComponent<BoxCollider>().enabled = false;
+			if(currentTurn > 10)
+			{
+				missionCheck.KnifeCheckOn();
+			}
 		}
+
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
 		if (other.CompareTag("Knife") && !Manager.IsGrabGet())
 		{
-			other.transform.parent = knifesSpot[currentTurn].transform;
-			currentTurn++;
-			other.transform.localPosition = Vector3.zero;
-			other.transform.localEulerAngles = Vector3.zero;
+			if (currentTurn < 5)
+				Organize(other);
+			else
+			{
+				currentTurn++;
+				other.gameObject.SetActive(false);
+			}
 
-			other.GetComponent<BoxCollider>().enabled = false;
-		}
+			if (currentTurn > 10)
+			{
+				missionCheck.KnifeCheckOn();
+			}
+		}	
 	}
 }
