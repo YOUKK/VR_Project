@@ -42,7 +42,7 @@ public class SoundButton : MonoBehaviour
         });
 
         homeButton.onClick.AddListener(() => {
-            SceneManager.LoadScene("Scene_YYJ 1");
+            SceneManager.LoadScene("Scene_MainTitle");
         });
 
         muteButton.onClick.AddListener(MuteVolume);

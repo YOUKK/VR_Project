@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.Serialization;
 
 public class Tutorial : MonoBehaviour
 {
@@ -17,6 +18,7 @@ public class Tutorial : MonoBehaviour
     public GameObject RightRayInteractor;
     public GameObject TutorialStuff;
     public GameObject ButtonStuff;
+    public GameObject ResultStuff;
     int clickCnt = 0;
     bool ButtonFlag = false;
 
@@ -24,7 +26,7 @@ public class Tutorial : MonoBehaviour
     public Sprite newSprite;
     public TextMeshProUGUI CountTxt;
     public GameObject CountBackground;
-    private int countdownTime = 20;
+    private int countdownTime = 60;
 
     // Start is called before the first frame update
     void Start()
@@ -45,7 +47,7 @@ public class Tutorial : MonoBehaviour
     public void CntUp()
     {
         Debug.Log(clickCnt);
-        if(ButtonFlag == false)
+        if (ButtonFlag == false)
         {
             clickCnt += 1;
             switch (clickCnt)
@@ -85,7 +87,7 @@ public class Tutorial : MonoBehaviour
 
     public void Button1()
     {
-        if(clickCnt == 4)
+        if (clickCnt == 4)
         {
             ScriptTxt.text = "질문\n오답입니다 다시한번 생각해보세요";
         }
@@ -138,8 +140,21 @@ public class Tutorial : MonoBehaviour
             {
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
+            if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 1 &&
+                GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&
+                GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn == 0)
+            {
+                ResultStuff.SetActive(true);
+                Debug.Log("성공");
+                Debug.Log(countdownTime);
+                break;
+            }
+            if (countdownTime == 0)
+            {
+                ResultStuff.SetActive(true);
+                Debug.Log("실패");
+            }
         }
-
     }
 
     IEnumerator ShakeText(float duration, float magnitude)
