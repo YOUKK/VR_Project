@@ -28,8 +28,10 @@ public class Tutorial : MonoBehaviour
     public GameObject CountBackground;
     private int countdownTime = 60;
 
-// Start is called before the first frame update
-void Start()
+    private MissionCheck missionCheckScript; // MissionCheck 스크립트 참조
+
+    // Start is called before the first frame update
+    void Start()
     {
         ScriptTxt.text = "안녕하세요! 저는 당신을 위한 특별한 도우미입니다.\n오늘은 우리 함께 재미있는 미션을 수행해 볼 거에요.";
         ButtonTxt1.text = "버튼1";
@@ -140,6 +142,7 @@ void Start()
             {
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
+
             if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 1 &&
                 GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&
                 GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn == 0)
@@ -155,6 +158,7 @@ void Start()
                 Debug.Log("실패");
 
             }
+            
         }
     }
 
