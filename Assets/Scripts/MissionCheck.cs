@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 
 public class MissionCheck : MonoBehaviour
@@ -12,9 +13,10 @@ public class MissionCheck : MonoBehaviour
     [SerializeField] private GameObject sfCheckOff;
 
 
+
     void Start()
     {
-        
+
     }
 
     void Update()
