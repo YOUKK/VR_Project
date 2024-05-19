@@ -1,11 +1,9 @@
-﻿// Copyright © 2018 – Property of Tobii AB (publ) - All Rights Reserved
-
+﻿using System.IO;
 using Tobii.G2OM;
 using UnityEngine;
 
 namespace Tobii.XR.Examples.DevTools
 {
-    //Monobehaviour which implements the "IGazeFocusable" interface, meaning it will be called on when the object receives focus
     public class HighlightAtGaze : MonoBehaviour, IGazeFocusable
     {
         private static readonly int _baseColor = Shader.PropertyToID("_BaseColor");
@@ -15,18 +13,51 @@ namespace Tobii.XR.Examples.DevTools
         private Renderer _renderer;
         private Color _originalColor;
         private Color _targetColor;
+        private static float lastGazeLeaveTime;
+        private static GameObject lastGazedObject;
+        private float gazeEnterTime;
+        private static string desktopPath = @"C:\Users\emsys\Desktop";
 
-        //The method of the "IGazeFocusable" interface, which will be called when this object receives or loses focus
+        private static string csvFilePath = Path.Combine(desktopPath, "test.csv");
+        private static bool fileHeaderWritten = false;
+
+        private void AppendToCSV(float gazeTransitionTime, float gazeDuration)
+        {
+            if (!File.Exists(csvFilePath) || !fileHeaderWritten)
+            {
+                File.WriteAllText(csvFilePath, "gazeTransitionTime,gazeDuration\n");
+                fileHeaderWritten = true;
+            }
+
+            using (StreamWriter sw = File.AppendText(csvFilePath))
+            {
+                sw.WriteLine($"{gazeTransitionTime},{gazeDuration}");
+            }
+        }
+
         public void GazeFocusChanged(bool hasFocus)
         {
-            //If this object received focus, fade the object's color to highlight color
             if (hasFocus)
             {
+                Debug.Log($"포커스 됨: {gameObject.name} 저장");
+                gazeEnterTime = Time.time;
+                lastGazedObject = gameObject;
                 _targetColor = highlightColor;
             }
-            //If this object lost focus, fade the object's color to it's original color
             else
             {
+                Debug.Log($"포커스 사라짐: {gameObject.name} 저장");
+                float gazeDuration = Time.time - gazeEnterTime;
+                float gazeTransitionTime = 0f;
+                if (lastGazedObject != null && lastGazedObject != this.gameObject)
+                {
+                    gazeTransitionTime = gazeEnterTime - lastGazeLeaveTime;
+                }
+
+                AppendToCSV(gazeTransitionTime, gazeDuration);
+
+                lastGazeLeaveTime = Time.time;
+                lastGazedObject = null;
                 _targetColor = _originalColor;
             }
         }
@@ -40,14 +71,13 @@ namespace Tobii.XR.Examples.DevTools
 
         private void Update()
         {
-            //This lerp will fade the color of the object
-            if (_renderer.material.HasProperty(_baseColor)) // new rendering pipeline (lightweight, hd, universal...)
+            if (_renderer.material.HasProperty(_baseColor))
             {
-                _renderer.material.SetColor(_baseColor, Color.Lerp(_renderer.material.GetColor(_baseColor), _targetColor, Time.deltaTime * (1 / animationTime)));
+                _renderer.material.SetColor(_baseColor, Color.Lerp(_renderer.material.GetColor(_baseColor), _targetColor, Time.deltaTime / animationTime));
             }
-            else // old standard rendering pipline
+            else
             {
-                _renderer.material.color = Color.Lerp(_renderer.material.color, _targetColor, Time.deltaTime * (1 / animationTime));
+                _renderer.material.color = Color.Lerp(_renderer.material.color, _targetColor, Time.deltaTime / animationTime);
             }
         }
     }

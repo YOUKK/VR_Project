@@ -22,29 +22,70 @@ public class ObRandom : MonoBehaviour
 
     void ActivateRandomPlates(int count)
     {
-        ActivateRandomObjects(lowPlateLowPlates, count);
+        if (lowPlateLowPlates != null && lowPlateLowPlates.Length > 0)
+        {
+            ActivateRandomObjects(lowPlateLowPlates, count);
+        }
+        else
+        {
+            Debug.LogWarning("lowPlateLowPlates array is not assigned or is empty.");
+        }
     }
 
     void ActivateRandomKnives(int count)
     {
-        ActivateRandomObjects(knives, count);
+        if (knives != null && knives.Length > 0)
+        {
+            ActivateRandomObjects(knives, count);
+        }
+        else
+        {
+            Debug.LogWarning("knives array is not assigned or is empty.");
+        }
     }
 
     void ActivateRandomForks(int count)
     {
-        ActivateRandomObjects(forks, count);
+        if (forks != null && forks.Length > 0)
+        {
+            ActivateRandomObjects(forks, count);
+        }
+        else
+        {
+            Debug.LogWarning("forks array is not assigned or is empty.");
+        }
     }
 
     void ActivateRandomSpoons(int count)
     {
-        ActivateRandomObjects(spoons, count);
+        if (spoons != null && spoons.Length > 0)
+        {
+            ActivateRandomObjects(spoons, count);
+        }
+        else
+        {
+            Debug.LogWarning("spoons array is not assigned or is empty.");
+        }
     }
 
     void ActivateRandomObjects(GameObject[] objectsArray, int count)
     {
+        if (objectsArray == null || objectsArray.Length == 0)
+        {
+            Debug.LogError("The objects array is null or empty.");
+            return;
+        }
+
         foreach (GameObject obj in objectsArray)
         {
-            obj.SetActive(false);
+            if (obj != null)
+            {
+                obj.SetActive(false);
+            }
+            else
+            {
+                Debug.LogWarning("One of the objects in the array is null.");
+            }
         }
 
         List<int> activatedIndexes = new List<int>();
@@ -60,7 +101,10 @@ public class ObRandom : MonoBehaviour
 
         foreach (int index in activatedIndexes)
         {
-            objectsArray[index].SetActive(true);
+            if (objectsArray[index] != null)
+            {
+                objectsArray[index].SetActive(true);
+            }
         }
     }
 }
