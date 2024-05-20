@@ -13,7 +13,7 @@ namespace Tobii.XR.Examples.DevTools
         private Renderer _renderer;
         private Color _originalColor;
         private Color _targetColor;
-        private static float lastGazeLeaveTime;
+        private static float lastGazeLeaveTime = 0; // 초기 값 설정
         private static GameObject lastGazedObject;
         private float gazeEnterTime;
         private static string desktopPath = @"C:\Users\emsys\Desktop";
@@ -21,42 +21,44 @@ namespace Tobii.XR.Examples.DevTools
         private static string csvFilePath = Path.Combine(desktopPath, "test.csv");
         private static bool fileHeaderWritten = false;
 
-        private void AppendToCSV(float gazeTransitionTime, float gazeDuration)
+        private void AppendToCSV(string objectName, float gazeTransitionTime, float gazeDuration, Vector3 position)
         {
             if (!File.Exists(csvFilePath) || !fileHeaderWritten)
             {
-                File.WriteAllText(csvFilePath, "gazeTransitionTime,gazeDuration\n");
+                File.WriteAllText(csvFilePath, "ObjectName,gazeTransitionTime,gazeDuration,X,Y,Z\n");
                 fileHeaderWritten = true;
             }
 
             using (StreamWriter sw = File.AppendText(csvFilePath))
             {
-                sw.WriteLine($"{gazeTransitionTime},{gazeDuration}");
+                sw.WriteLine($"{objectName},{gazeTransitionTime},{gazeDuration},{position.x},{position.y},{position.z}");
             }
         }
 
         public void GazeFocusChanged(bool hasFocus)
         {
+            Vector3 currentPosition = transform.position;
+            string currentObjectName = gameObject.name;
+
             if (hasFocus)
             {
-                Debug.Log($"포커스 됨: {gameObject.name} 저장");
-                gazeEnterTime = Time.time;
+                Debug.Log($"포커스 됨: {currentObjectName} 저장, 위치: {currentPosition}");
+                gazeEnterTime = Time.time; // 포커스 시작 시간 기록
                 lastGazedObject = gameObject;
                 _targetColor = highlightColor;
             }
             else
             {
-                Debug.Log($"포커스 사라짐: {gameObject.name} 저장");
                 float gazeDuration = Time.time - gazeEnterTime;
                 float gazeTransitionTime = 0f;
-                if (lastGazedObject != null && lastGazedObject != this.gameObject)
+                if (lastGazedObject != null && lastGazedObject == this.gameObject)
                 {
                     gazeTransitionTime = gazeEnterTime - lastGazeLeaveTime;
                 }
+                lastGazeLeaveTime = Time.time; // 포커스가 사라진 시간을 여기에서 업데이트
 
-                AppendToCSV(gazeTransitionTime, gazeDuration);
+                AppendToCSV(currentObjectName, gazeTransitionTime, gazeDuration, currentPosition);
 
-                lastGazeLeaveTime = Time.time;
                 lastGazedObject = null;
                 _targetColor = _originalColor;
             }

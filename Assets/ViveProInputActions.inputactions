@@ -1,0 +1,54 @@
+{
+    "name": "ViveProInputActions",
+    "maps": [
+        {
+            "name": "XR Controller",
+            "id": "ac79c2e7-3e1b-49e4-b379-afd1f2a8da1a",
+            "actions": [
+                {
+                    "name": "TriggerLeftClick",
+                    "type": "Button",
+                    "id": "7a83081d-cb83-4f24-adcc-f2b4bd72a7fe",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "TriggerRightClick",
+                    "type": "Button",
+                    "id": "30c1d9f7-3f01-43f0-b789-2423c05a1381",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "b7724e02-3d04-4a67-af52-250e6d3be14c",
+                    "path": "<XRController>{LeftHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerLeftClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "27da8fe0-07d7-45a6-9890-0194d585a361",
+                    "path": "<XRController>{RightHand}/trigger",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "TriggerRightClick",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
