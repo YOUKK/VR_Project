@@ -40,7 +40,7 @@ public class Tutorial : MonoBehaviour
     {
         ScriptTxt.text = "안녕하세요!\n저는 당신을 위한 특별한 도우미예요.\n오늘은 재미있는 미션을 수행해 볼 거에요.";
         ButtonTxt1.text = "부엌에서 그릇을\n찬장으로 옮기기";
-        ButtonTxt2.text = "부엌에서 음식을\n준비하기";
+        ButtonTxt2.text = "부엌에서 음식\n준비하기";
         ButtonTxt3.text = "부엌에서 식사 도구\n정리하기";
         ButtonTxt4.text = "부엌을 청소하기";
 

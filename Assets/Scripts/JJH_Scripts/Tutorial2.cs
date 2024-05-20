@@ -38,11 +38,11 @@ public class Tutorial2 : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScriptTxt.text = "text1";
+        ScriptTxt.text = "이제 두 번째 미션을 알려드릴게요.\n두 번째 미션은 [소리에 해당하는 장난감 분류하기]예요.";
         ButtonTxt1.text = "왼쪽";
         ButtonTxt2.text = "오른쪽";
-        ButtonTxt3.text = "3번 소리";
-        ButtonTxt4.text = "4번 소리";
+        ButtonTxt3.text = "오리 울음 소리";
+        ButtonTxt4.text = "소 울음 소리";
 
         audioSources = this.gameObject.GetComponents<AudioSource>();
 
@@ -61,24 +61,24 @@ public class Tutorial2 : MonoBehaviour
             switch (clickCnt)
             {
                 case 1:
-                    ScriptTxt.text = "text2";
+                    ScriptTxt.text = "동물 울음 소리가 들리면\n해당 동물은 오른쪽 바구니에 분류하고";
                     break;
                 case 2:
-                    ScriptTxt.text = "text3";
+                    ScriptTxt.text = "신호음이 들리면\n 해당 동물을 오른쪽 바구니에 분류하세요\n";
                     break;
                 case 3:
-                    ScriptTxt.text = "text4";
+                    ScriptTxt.text = "그럼 준비가 되었다면 우리 함께 시작해 볼까요?\n";
                     break;
                 case 4:
-                    ScriptTxt.text = "동물을 어디로?";
+                    ScriptTxt.text = "여기서 잠깐!\n미션을 이해했는지 확인하려고 해요. \n동물을 어느 쪽에 분류하면 될까요?";
                     ButtonFlag = true;
                     ButtonStuff.SetActive(true);
                     break;
                 case 5:
-                    ScriptTxt.text = "어떤 소리가 들리면 넣지말라고 했지?";
+                    ScriptTxt.text = "정답입니다.\n그 다음은 어떤 소리가 들리면 넣지말라고 했나요?";
                     ButtonFlag = true;
-                    ButtonTxt1.text = "1번 소리";
-                    ButtonTxt2.text = "2번 소리";
+                    ButtonTxt1.text = "양 울음 소리";
+                    ButtonTxt2.text = "경고음 소리";
                     Button3_.SetActive(true);
                     Button4_.SetActive(true);
                     break;
@@ -109,11 +109,11 @@ public class Tutorial2 : MonoBehaviour
     {
         if (clickCnt == 5)
         {
-            ScriptTxt.text = "어떤 소리가 들리면 넣지말라고 했지?\n오답입니다 다시한번 생각해보세요";
+            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
         }
-        if(clickCnt == 4)
+        if (clickCnt == 4)
         {
-            ScriptTxt.text = "동물을 어디로?\n오답입니다 다시한번 생각해보세요";
+            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
         }
     }
     public void Button2()
@@ -134,14 +134,14 @@ public class Tutorial2 : MonoBehaviour
     {
         if (clickCnt == 5)
         {
-            ScriptTxt.text = "어떤 소리가 들리면 넣지말라고 했지?\n오답입니다 다시한번 생각해보세요";
+            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
         }
     }
     public void Button4()
     {
         if (clickCnt == 5)
         {
-            ScriptTxt.text = "어떤 소리가 들리면 넣지말라고 했지?\n오답입니다 다시한번 생각해보세요";
+            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
         }
     }
     void ChangeImage()
@@ -173,6 +173,7 @@ public class Tutorial2 : MonoBehaviour
 
     IEnumerator CountdownTimer()
     {
+
         while (countdownTime > 0)
         {
             yield return new WaitForSeconds(1f);
@@ -184,7 +185,7 @@ public class Tutorial2 : MonoBehaviour
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
 
-            if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 2 &&
+            /*if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 2 &&
                 GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&
                 GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn == 0)
             {
@@ -202,7 +203,7 @@ public class Tutorial2 : MonoBehaviour
                 CountBackground.SetActive(false);
                 CountTxt.gameObject.SetActive(false);
 
-            }
+            }*/
 
         }
     }

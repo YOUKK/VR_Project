@@ -2333,7 +2333,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -87.9, y: -72}
+  m_AnchoredPosition: {x: -87.9, y: -65}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &969502616
@@ -2441,6 +2441,8 @@ MonoBehaviour:
   RightRayInteractor: {fileID: 0}
   TutorialStuff: {fileID: 0}
   ButtonStuff: {fileID: 0}
+  ResultSuccess: {fileID: 0}
+  ResultFail: {fileID: 0}
   ScriptTxtBox: {fileID: 0}
   newSprite: {fileID: 0}
   CountTxt: {fileID: 0}
@@ -3066,8 +3068,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.1, y: 0.3}
   m_AnchorMax: {x: 0.1, y: 0.3}
-  m_AnchoredPosition: {x: 151, y: -19}
-  m_SizeDelta: {x: 115, y: 100}
+  m_AnchoredPosition: {x: 156, y: -19}
+  m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0, y: 0.3}
 --- !u!1 &1303191337
 GameObject:
@@ -4302,7 +4304,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 214, y: -72}
+  m_AnchoredPosition: {x: 214, y: -65}
   m_SizeDelta: {x: 80, y: 80}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2012540843

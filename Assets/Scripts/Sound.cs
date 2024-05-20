@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.SceneManagement; // 씬 관리를 위한 네임스페이스 추가
+using UnityEngine.SceneManagement; 
 
 public class Sound : MonoBehaviour
 {
@@ -14,7 +14,7 @@ public class Sound : MonoBehaviour
             Instance = this;
             DontDestroyOnLoad(gameObject);
             InitializeAudio();
-            SceneManager.sceneLoaded += OnSceneLoaded; // 씬이 로드될 때 호출될 이벤트에 메소드 연결
+            SceneManager.sceneLoaded += OnSceneLoaded;
         }
         else
         {
@@ -24,8 +24,8 @@ public class Sound : MonoBehaviour
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        // "GAME" 씬에서만 볼륨을 1로 설정
-        if (scene.name == "Game")
+        // "GAME2" 씬에서만 볼륨을 1로 설정
+        if (scene.name == "Game2")
         {
             SetVolume(0f);
         }
@@ -52,7 +52,6 @@ public class Sound : MonoBehaviour
 
     void OnDestroy()
     {
-        // 이벤트 연결 해제
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
 }
