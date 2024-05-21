@@ -2,31 +2,31 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class OrganizeDish : MonoBehaviour
+public class OrganizeCar : MonoBehaviour
 {
-    private List<GameObject> dishesSpot = new List<GameObject>(); // 접시가 정리될 위치를 구할 접시들
+	private List<GameObject> carSpot = new List<GameObject>();
 
-    public int currentTurn = 0;
+	public int currentTurn = 0;
 
 	[SerializeField]
 	private MissionCheck missionCheck;
 
 	void Start()
-    {
-        for(int i = 0; i < 21; i++)
+	{
+		for (int i = 1; i <= 2; i++)
 		{
-            dishesSpot.Add(gameObject.transform.GetChild(i).gameObject);
+			carSpot.Add(gameObject.transform.GetChild(i).gameObject);
 		}
-    }
+	}
 
-    void Update()
-    {
-        
-    }
+	void Update()
+	{
+
+	}
 
 	private void Organize(Collider other)
 	{
-		other.transform.parent = dishesSpot[currentTurn].transform;
+		other.transform.parent = carSpot[currentTurn].transform;
 		currentTurn++;
 		other.transform.localPosition = Vector3.zero;
 		other.transform.localEulerAngles = Vector3.zero;
@@ -36,9 +36,9 @@ public class OrganizeDish : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
+		if (other.CompareTag("Car") && !Manager.IsGrabGet())
 		{
-			if (currentTurn < 21)
+			if (currentTurn < 2)
 				Organize(other);
 			else
 			{
@@ -46,16 +46,19 @@ public class OrganizeDish : MonoBehaviour
 				other.gameObject.SetActive(false);
 			}
 
-			if (currentTurn >= 10)
-				missionCheck.DishCheckOn();
+			//if (currentTurn >= 10)
+			//{
+			//	missionCheck.KnifeCheckOn();
+			//}
 		}
+
 	}
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
+		if (other.CompareTag("Car") && !Manager.IsGrabGet())
 		{
-			if (currentTurn < 21)
+			if (currentTurn < 2)
 				Organize(other);
 			else
 			{
@@ -63,8 +66,10 @@ public class OrganizeDish : MonoBehaviour
 				other.gameObject.SetActive(false);
 			}
 
-			if (currentTurn >= 10)
-				missionCheck.DishCheckOn();
+			//if (currentTurn >= 10)
+			//{
+			//	missionCheck.KnifeCheckOn();
+			//}
 		}
 	}
 }

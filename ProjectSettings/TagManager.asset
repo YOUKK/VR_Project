@@ -9,6 +9,8 @@ TagManager:
   - Fork
   - Knife
   - Cube
+  - Animal
+  - Car
   layers:
   - Default
   - TransparentFX

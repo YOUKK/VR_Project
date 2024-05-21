@@ -54,7 +54,7 @@ public class OrganizeSpoonFork : MonoBehaviour
 			else
 				forkNum++;
 
-			if (spoonNum > 5 && forkNum > 5)
+			if (spoonNum >= 5 && forkNum >= 5)
 				missionCheck.SFCheckOn();
 		}
 	}
@@ -77,7 +77,7 @@ public class OrganizeSpoonFork : MonoBehaviour
 			else
 				forkNum++;
 
-			if (spoonNum > 5 && forkNum > 5)
+			if (spoonNum >= 5 && forkNum >= 5)
 				missionCheck.SFCheckOn();
 		}
 	}
