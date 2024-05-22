@@ -31,7 +31,7 @@ public class OrganizeAnimal : MonoBehaviour
 		other.transform.localPosition = Vector3.zero;
 		other.transform.localEulerAngles = Vector3.zero;
 
-		other.GetComponent<CapsuleCollider>().enabled = false;
+		other.GetComponent<BoxCollider>().enabled = false;
 	}
 
 	private void OnTriggerEnter(Collider other)
