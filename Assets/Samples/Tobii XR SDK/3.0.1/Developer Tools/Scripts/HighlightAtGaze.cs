@@ -16,7 +16,8 @@ namespace Tobii.XR.Examples.DevTools
         private static float lastGazeLeaveTime = 0; // 초기 값 설정
         private static GameObject lastGazedObject;
         private float gazeEnterTime;
-        private static string desktopPath = @"C:\Users\emsys\Desktop";
+        private static string desktopPath = @"D:\";
+        //private static string desktopPath = @"C:\Users\emsys\Desktop";
 
         private static string csvFilePath = Path.Combine(desktopPath, "test.csv");
         private static bool fileHeaderWritten = false;
