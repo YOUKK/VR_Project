@@ -35,6 +35,8 @@ public class Tutorial2 : MonoBehaviour
     public GameObject CountBackground;
     private int countdownTime = 20;
 
+    public Mission2 mission2Script; // Mission2 스크립트를 참조 위한 필드 
+
     // Start is called before the first frame update
     void Start()
     {
@@ -95,6 +97,8 @@ public class Tutorial2 : MonoBehaviour
                     ScriptTxt.text = " ";
                     CountTxt.gameObject.SetActive(true);
                     ChangeImage();
+
+                    StartCoroutine(mission2Script.ActivateToysRandomly()); // 여기서 시작
 
                     break;
             }
