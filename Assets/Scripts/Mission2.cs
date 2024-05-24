@@ -27,10 +27,12 @@ public class Mission2 : MonoBehaviour
     public IEnumerator ActivateToysRandomly()
     {
         int count = 0;
-        while (count < 10)
+        while (count < 5)
         {
 
             GameObject selectedToy = allToys[Random.Range(0, allToys.Length)];
+
+            selectedToy.transform.position = new Vector3(3.270312f, 1.884282f, -1.77649f);
 
             selectedToy.SetActive(true);
 
@@ -54,7 +56,7 @@ public class Mission2 : MonoBehaviour
             Debug.Log("장난감 종류 결과: " + string.Join(", ", toyTypes));
             Debug.Log("장난감 소리 종류: " + string.Join(", ", toySoundIndices));
 
-            yield return new WaitForSeconds(4f);//4초
+            yield return new WaitForSeconds(10f);//4초
             selectedToy.SetActive(false);
             count++;
         }
