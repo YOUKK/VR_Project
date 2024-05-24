@@ -3,6 +3,9 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using JetBrains.Annotations;
+using System.Linq;
+using UnityEngine.SceneManagement;
 
 public class Tutorial2 : MonoBehaviour
 {
@@ -28,6 +31,9 @@ public class Tutorial2 : MonoBehaviour
 
     int clickCnt = 0;
     bool ButtonFlag = false;
+    public int M2_score1 = 5;
+    public int M2_score2 = 5;
+    public int M2_score = 0;
 
     public GameObject ScriptTxtBox;
     public Sprite newSprite;
@@ -40,12 +46,18 @@ public class Tutorial2 : MonoBehaviour
     [SerializeField]
     private Animator birdAnimator;
 
+    [SerializeField]
+    private bucketRed bucketRed;
+    [SerializeField] 
+    private bucketBlue bucketBlue;
+
+
     // Start is called before the first frame update
     void Start()
     {
         ScriptTxt.text = "이제 두 번째 미션을 알려드릴게요.\n두 번째 미션은 [소리에 해당하는 장난감 분류하기]예요.";
-        ButtonTxt1.text = "왼쪽";
-        ButtonTxt2.text = "오른쪽";
+        ButtonTxt1.text = "빨간색 바구니";
+        ButtonTxt2.text = "파란색 바구니";
         ButtonTxt3.text = "오리 울음 소리";
         ButtonTxt4.text = "소 울음 소리";
 
@@ -66,10 +78,10 @@ public class Tutorial2 : MonoBehaviour
             switch (clickCnt)
             {
                 case 1:
-                    ScriptTxt.text = "동물 울음 소리가 들리면\n해당 동물은 오른쪽 바구니에 분류하고";
+                    ScriptTxt.text = "빨간색 바구니에는 동물 인형을 넣고\n 파란 바구니에는 동물 인형이 아닌 장난감을 넣어주세요.";
                     break;
                 case 2:
-                    ScriptTxt.text = "신호음이 들리면\n 해당 동물을 오른쪽 바구니에 분류하세요\n";
+                    ScriptTxt.text = "만약 장난감 소리가 아닌 경고음이 들리면\n 해당 장난감을 바구니에 넣지 마세요.";
                     break;
                 case 3:
                     ScriptTxt.text = "그럼 준비가 되었다면 우리 함께 시작해 볼까요?\n";
@@ -116,11 +128,16 @@ public class Tutorial2 : MonoBehaviour
     {
         if (clickCnt == 5)
         {
+            if (M2_score2 > 0) M2_score2 -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            Debug.Log("M2_score2:" + M2_score2);
             birdAnimator.SetTrigger("No");
         }
         if (clickCnt == 4)
         {
+            if (M2_score1 > 0) M2_score1 -= 1;
+            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            Debug.Log("M2_score1:" + M2_score1);
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             birdAnimator.SetTrigger("No");
         }
@@ -133,19 +150,23 @@ public class Tutorial2 : MonoBehaviour
             ButtonStuff.SetActive(false);
             birdAnimator.SetTrigger("Happy");
             CntUp();
+            Debug.Log("M2_score2:" + M2_score2);
         }
         if (clickCnt == 4)
         {
             ButtonFlag = false;
             birdAnimator.SetTrigger("Happy");
             CntUp();
+            Debug.Log("M2_score1:" + M2_score1);
         }
     }
     public void Button3()
     {
         if (clickCnt == 5)
         {
+            if (M2_score2 > 0) M2_score2 -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            Debug.Log("M2_score2:" + M2_score2);
             birdAnimator.SetTrigger("No");
         }
     }
@@ -153,7 +174,9 @@ public class Tutorial2 : MonoBehaviour
     {
         if (clickCnt == 5)
         {
+            if(M2_score2 > 0) M2_score2 -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            Debug.Log("M2_score2:" + M2_score2);
             birdAnimator.SetTrigger("No");
         }
     }
@@ -198,6 +221,31 @@ public class Tutorial2 : MonoBehaviour
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
 
+            int sum1 = bucketRed.isAnswer.Sum();
+            int sum2 = bucketBlue.isAnswer.Sum();
+
+            if(sum1 + sum2 == 0)
+            {
+                ResultSuccess.SetActive(true);
+                Debug.Log("성공");
+                Debug.Log(countdownTime);
+                CountBackground.SetActive(false);
+                CountTxt.gameObject.SetActive(false);
+                //5초뒤 씬전환
+                yield return new WaitForSeconds(5f);
+                SceneManager.LoadScene("Scenario1_Result");
+            }
+            if(countdownTime <= 0)
+            {
+                ResultFail.SetActive(true);
+                Debug.Log("실패");
+                CountBackground.SetActive(false);
+                CountTxt.gameObject.SetActive(false);
+                //5초뒤 씬전환
+                yield return new WaitForSeconds(5f);
+                SceneManager.LoadScene("Scenario1_Result");
+            }
+
             /*if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 2 &&
                 GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&
                 GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn == 0)
@@ -219,6 +267,8 @@ public class Tutorial2 : MonoBehaviour
             }*/
 
         }
+        M2_score = M2_score1 + M2_score2;
+        Debug.Log("총 점수(M2_score): " + M2_score);
     }
 
     IEnumerator ShakeText(float duration, float magnitude)

@@ -27,6 +27,7 @@ public class Tutorial : MonoBehaviour
 
     int clickCnt = 0;
     bool ButtonFlag = false;
+    public int M1_score = 10;
 
     public GameObject ScriptTxtBox;
     public Sprite newSprite;
@@ -103,7 +104,9 @@ public class Tutorial : MonoBehaviour
     {
         if(clickCnt == 5)
         {
-            ScriptTxt.text = "오답입니다.\n다시한번 생각해보세요";
+            if (M1_score > 0) M1_score -= 1;
+            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
     }
@@ -111,7 +114,9 @@ public class Tutorial : MonoBehaviour
     {
         if (clickCnt == 5)
         {
-            ScriptTxt.text = "오답입니다.\n다시한번 생각해보세요";
+            if (M1_score > 0) M1_score -= 1;
+            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
     }
@@ -121,6 +126,7 @@ public class Tutorial : MonoBehaviour
         {
             ButtonFlag = false;
             ButtonStuff.SetActive(false);
+            Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("Happy");
             CntUp();
         }
@@ -129,7 +135,9 @@ public class Tutorial : MonoBehaviour
     {
         if (clickCnt == 5)
         {
-            ScriptTxt.text = "오답입니다.\n다시한번 생각해보세요";
+            if (M1_score > 0) M1_score -= 1;
+            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
     }
@@ -183,6 +191,7 @@ public class Tutorial : MonoBehaviour
                 SceneManager.LoadScene("Game2");
             }
         }
+        Debug.Log("총 점수(M1_score):" + M1_score);
     }
 
     IEnumerator ShakeText(float duration, float magnitude)

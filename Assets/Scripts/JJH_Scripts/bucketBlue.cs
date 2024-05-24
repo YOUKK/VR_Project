@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class bucketBlue : MonoBehaviour
 {
-	private List<int> isAnswer = new List<int>();
+	public List<int> isAnswer = new List<int>();
 
 	private void OnTriggerEnter(Collider other)
 	{

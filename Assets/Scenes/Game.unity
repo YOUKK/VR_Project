@@ -380,6 +380,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ec81535c8f1653447a220ec41a57d922, type: 3}
+--- !u!95 &2935207 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4047177439998660255, guid: ec81535c8f1653447a220ec41a57d922,
+    type: 3}
+  m_PrefabInstance: {fileID: 2935206}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &4113549 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 5261897400118717547, guid: 2e073b55326a47e4e968b9608e949186,
@@ -15364,10 +15370,12 @@ MonoBehaviour:
   ButtonStuff: {fileID: 417941305}
   ResultSuccess: {fileID: 351767966}
   ResultFail: {fileID: 1633102132}
+  M1_score: 10
   ScriptTxtBox: {fileID: 762137616}
   newSprite: {fileID: 21300000, guid: ea433cbf449f88d4b8c16a8726c73e85, type: 3}
   CountTxt: {fileID: 283128454}
   CountBackground: {fileID: 2114255473}
+  birdAnimator: {fileID: 2935207}
 --- !u!114 &682182198
 MonoBehaviour:
   m_ObjectHideFlags: 0

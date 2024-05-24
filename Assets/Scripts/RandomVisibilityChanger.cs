@@ -3,8 +3,23 @@ using UnityEngine;
 
 public class RandomVisibilityChanger : MonoBehaviour
 {
-    public GameObject[] objects; // 색을 변경할 세 개의 오브젝트를 할당
-    private int lastIndex = -1; // 마지막으로 색이 변경된 오브젝트의 인덱스
+    public GameObject[] objects;
+    private int lastIndex = -1;
+
+    void Awake()
+    {
+        // 처음에는 모든 오브젝트를 숨깁니다.
+        if (objects != null && objects.Length > 0)
+        {
+            foreach (var obj in objects)
+            {
+                obj.SetActive(false);
+            }
+        }
+
+        // 이 오브젝트 자신을 비활성화
+        gameObject.SetActive(false);
+    }
 
     void Start()
     {
@@ -14,14 +29,11 @@ public class RandomVisibilityChanger : MonoBehaviour
             return;
         }
 
-        // 처음에는 모든 오브젝트를 숨깁니다.
-        foreach (var obj in objects)
+        // 이 오브젝트가 활성화된 경우에만 코루틴을 시작합니다.
+        if (gameObject.activeInHierarchy)
         {
-            obj.SetActive(false);
+            StartCoroutine(ChangeVisibilityRoutine());
         }
-
-        // 색 변경을 반복적으로 호출
-        StartCoroutine(ChangeVisibilityRoutine());
     }
 
     IEnumerator ChangeVisibilityRoutine()
@@ -45,7 +57,7 @@ public class RandomVisibilityChanger : MonoBehaviour
             // 새로운 오브젝트를 보이도록 설정
             objects[newIndex].SetActive(true);
 
-            // 새로운 인덱스를 저장하여 다음 색 변경 시 동일한 오브젝트가 선택되지 않도록 함
+            // 새로운 인덱스를 저장하여 다음 랜덤 생성시 동일한 오브젝트가 선택되지 않도록 함
             lastIndex = newIndex;
 
             // 3초 동안 대기

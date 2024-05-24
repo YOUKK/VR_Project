@@ -3314,7 +3314,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -4927,6 +4927,7 @@ MonoBehaviour:
   bird: {fileID: 1389543795}
   rayLeft: {fileID: 553329100}
   rayRight: {fileID: 2005896799}
+  rand: {fileID: 510694011}
 --- !u!1 &1244464124
 GameObject:
   m_ObjectHideFlags: 0

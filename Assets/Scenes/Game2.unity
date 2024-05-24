@@ -8169,12 +8169,17 @@ MonoBehaviour:
   delayBetweenSounds: 1
   ResultSuccess: {fileID: 351767966}
   ResultFail: {fileID: 1633102132}
+  M2_score1: 5
+  M2_score2: 5
+  M2_score: 0
   ScriptTxtBox: {fileID: 762137616}
   newSprite: {fileID: 21300000, guid: ea433cbf449f88d4b8c16a8726c73e85, type: 3}
   CountTxt: {fileID: 283128454}
   CountBackground: {fileID: 2114255473}
   mission2Script: {fileID: 1788743737}
   birdAnimator: {fileID: 1787832954}
+  bucketRed: {fileID: 1256538212}
+  bucketBlue: {fileID: 887851570}
 --- !u!82 &363756468
 AudioSource:
   m_ObjectHideFlags: 0
@@ -15060,6 +15065,25 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: dc2ac1c680573d846b7fb24f07c8a544, type: 3}
+--- !u!1 &887851569 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 5851439066369364944, guid: dc2ac1c680573d846b7fb24f07c8a544,
+    type: 3}
+  m_PrefabInstance: {fileID: 887851568}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &887851570
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 887851569}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df57bb8ff8c826d47b15fec40ad6971b, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isAnswer: 
 --- !u!1 &895862802
 GameObject:
   m_ObjectHideFlags: 0
@@ -20633,6 +20657,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eede669126dae5d448bf8ded31d94c2d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAnswer: 
 --- !u!1001 &1259952842
 PrefabInstance:
   m_ObjectHideFlags: 0
