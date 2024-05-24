@@ -13,7 +13,7 @@ public class OrganizeCar : MonoBehaviour
 
 	void Start()
 	{
-		for (int i = 1; i <= 3; i++)
+		for (int i = 0; i < 3; i++)
 		{
 			dollSpot.Add(gameObject.transform.GetChild(i).gameObject);
 		}
