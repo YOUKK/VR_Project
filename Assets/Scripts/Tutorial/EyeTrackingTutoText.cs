@@ -84,27 +84,38 @@ public class EyeTrackingTutoText : MonoBehaviour
 
     IEnumerator CountdownTimer()
     {
-        Debug.Log("Countdown Timer started"); // 추가된 디버그 로그
         while (countdownTime > 0)
         {
-            Debug.Log("Countdown: " + countdownTime); // 디버그 로그 추가
             yield return new WaitForSeconds(1f);
             countdownTime--;
-            Debug.Log("Countdown decremented: " + countdownTime); // 디버그 로그 추가
             CountTxt.text = countdownTime.ToString();
 
             if (countdownTime <= 10)
             {
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
+
+            if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 2 &&
+                GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&
+                GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn == 0)
+            {
+                ResultSuccess.SetActive(true);
+                Debug.Log("성공");
+                Debug.Log(countdownTime);
+                CountBackground.SetActive(false);
+                CountTxt.gameObject.SetActive(false);
+                break;
+            }
+            if (countdownTime == 0)
+            {
+                ResultFail.SetActive(true);
+                Debug.Log("실패");
+                CountBackground.SetActive(false);
+                CountTxt.gameObject.SetActive(false);
+
+            }
+
         }
-
-        Debug.Log("Countdown finished"); // 추가된 디버그 로그
-
-        // 타이머가 끝나면 성공 메시지를 표시합니다.
-        ResultSuccess.SetActive(true);
-        CountBackground.SetActive(false);
-        CountTxt.gameObject.SetActive(false);
     }
 
     IEnumerator ShakeText(float duration, float magnitude)
