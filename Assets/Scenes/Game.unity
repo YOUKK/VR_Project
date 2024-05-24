@@ -406,6 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &4113552
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -785,6 +786,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &7247954
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -1713,6 +1715,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &47930074
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -4952,6 +4955,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &205979771
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -5062,6 +5066,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &221487020
 GameObject:
   m_ObjectHideFlags: 0
@@ -5406,6 +5411,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &241486377
 GameObject:
   m_ObjectHideFlags: 0
@@ -5827,6 +5833,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1001 &271650530
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6954,6 +6961,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &302004093
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9519,6 +9527,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &369757307
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9588,6 +9597,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &370347256
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -9983,6 +9993,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &384051826
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -12519,7 +12530,7 @@ PrefabInstance:
     - target: {fileID: 6598815579406187037, guid: 18ddb545287c546e19cc77dc9fbb2189,
         type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 18ddb545287c546e19cc77dc9fbb2189, type: 3}
@@ -12782,6 +12793,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &525751858
 GameObject:
   m_ObjectHideFlags: 0
@@ -13179,6 +13191,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &550788243
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -13315,6 +13328,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1001 &557426061
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -14185,6 +14199,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!33 &614766613
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -14346,6 +14361,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &633732004
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14598,6 +14614,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &646883302
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -14871,6 +14888,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1001 &669777126
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -15048,6 +15066,7 @@ MonoBehaviour:
   newSprite: {fileID: 21300000, guid: ea433cbf449f88d4b8c16a8726c73e85, type: 3}
   CountTxt: {fileID: 283128454}
   CountBackground: {fileID: 2114255473}
+  birdAnimator: {fileID: 0}
 --- !u!114 &682182198
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -15804,6 +15823,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &756267314
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -16114,6 +16134,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &767418234
 GameObject:
   m_ObjectHideFlags: 0
@@ -17839,6 +17860,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &883071805
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18313,6 +18335,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &920863264 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 4328387756644108352, guid: 568daf83a9e34104b8712a891c5e339e,
@@ -18339,6 +18362,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &920863267
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -18449,6 +18473,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &930105104
 GameObject:
   m_ObjectHideFlags: 0
@@ -19138,6 +19163,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!4 &952148014
 Transform:
   m_ObjectHideFlags: 0
@@ -19632,6 +19658,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &987263825
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -20495,6 +20522,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &1067789871
 GameObject:
   m_ObjectHideFlags: 0
@@ -20669,6 +20697,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &1075470349
 GameObject:
   m_ObjectHideFlags: 0
@@ -21183,6 +21212,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &1107548794 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2644596085760652998, guid: 4fe217e042ef7434bb70b09fbf67e663,
@@ -21251,6 +21281,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &1113162596
 GameObject:
   m_ObjectHideFlags: 0
@@ -23097,6 +23128,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!33 &1177660009
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -24433,6 +24465,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1240496246
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -24622,6 +24655,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &1274596205
 GameObject:
   m_ObjectHideFlags: 0
@@ -30778,6 +30812,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1330719380
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -31207,6 +31242,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &1352546374
 GameObject:
   m_ObjectHideFlags: 0
@@ -31395,6 +31431,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1360424400
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -32148,6 +32185,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1402804795
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -38733,6 +38771,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1428658195
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39059,6 +39098,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1454960745
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -39372,6 +39412,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1490720977
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -41620,6 +41661,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1646749580
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42552,6 +42594,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1699581786
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -42752,6 +42795,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1001 &1712931383
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -43159,6 +43203,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1736984955
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -45249,6 +45294,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1876916737
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -46343,6 +46389,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1001 &1960858141
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -46559,6 +46606,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &1982067389
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49864,6 +49912,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &2006972481
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -49932,6 +49981,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &2013374402
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -50561,6 +50611,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!33 &2060063737
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -51711,6 +51762,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!1 &2125260597 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 2644596085760652998, guid: 4fe217e042ef7434bb70b09fbf67e663,
@@ -51805,6 +51857,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &2128229520
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -52028,6 +52081,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   highlightColor: {r: 1, g: 0, b: 0, a: 1}
   animationTime: 0.1
+  childRenderer: {fileID: 0}
 --- !u!23 &2132671521
 MeshRenderer:
   m_ObjectHideFlags: 0
