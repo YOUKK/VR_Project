@@ -8174,7 +8174,7 @@ MonoBehaviour:
   CountTxt: {fileID: 283128454}
   CountBackground: {fileID: 2114255473}
   mission2Script: {fileID: 1788743737}
-  birdAnimator: {fileID: 0}
+  birdAnimator: {fileID: 1787832954}
 --- !u!82 &363756468
 AudioSource:
   m_ObjectHideFlags: 0
@@ -38271,6 +38271,12 @@ GameObject:
 --- !u!4 &1787832953 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 7983292953435411685, guid: ec81535c8f1653447a220ec41a57d922,
+    type: 3}
+  m_PrefabInstance: {fileID: 1787832951}
+  m_PrefabAsset: {fileID: 0}
+--- !u!95 &1787832954 stripped
+Animator:
+  m_CorrespondingSourceObject: {fileID: 4047177439998660255, guid: ec81535c8f1653447a220ec41a57d922,
     type: 3}
   m_PrefabInstance: {fileID: 1787832951}
   m_PrefabAsset: {fileID: 0}
