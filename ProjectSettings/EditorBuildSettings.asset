@@ -12,26 +12,17 @@ EditorBuildSettings:
     path: Assets/Scenes/Tutorial.unity
     guid: 8b4c0d7ff6c73bf429a6e22d0d57c057
   - enabled: 1
+    path: Assets/Scenes/Eyetracking_Tutorial.unity
+    guid: 57cffd37bdc59b7469d053fc554b7076
+  - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 0dd81394597fcc94998dc1c2fb0848ab
   - enabled: 1
-    path: Assets/Scenes/SampleScene.unity
-    guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
-    path: Assets/Scenes/Scene_KYK.unity
-    guid: f8b0aaa38719aa443b9bbd688b0e1135
+    path: Assets/Scenes/Game2.unity
+    guid: 2a12a66fca98de94bb7759378a194e13
   - enabled: 1
     path: Assets/Scenes/Scenario1.unity
     guid: 082007a7b5019b84290c294dcb059856
-  - enabled: 0
-    path: Assets/Scenes/Scene_YYJ.unity
-    guid: 82a79114e33a8db4789143a2369a8baa
-  - enabled: 0
-    path: Assets/Scenes/Game2.unity
-    guid: dd3fe0106996be0409ce30134feaf028
-  - enabled: 1
-    path: Assets/Scenes/Scenario1_RandomObject.unity
-    guid: 77e711ecab0002643b74a72928f9778a
   - enabled: 1
     path: Assets/Scenes/Scenario1_Result.unity
     guid: 16737248c69545449b976a35f8f732d2
@@ -41,12 +32,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_SoundSetting.unity
     guid: 250ad8ce36bd2994ca11a5beb2f6309c
-  - enabled: 1
-    path: Assets/Scenes/Scene_MainTitle.unity
-    guid: fa7875830330b6745ae5cf57db76edcb
-  - enabled: 1
-    path: Assets/Scenes/Game.unity
-    guid: 0dd81394597fcc94998dc1c2fb0848ab
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ba99fe3a5e1f9aa42a5fa05d54cbeb3b,
       type: 2}
