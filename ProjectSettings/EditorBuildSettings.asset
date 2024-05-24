@@ -6,7 +6,7 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Scene_MainTitle.unity
+    path: Assets/Scenes/Scene_MainTitle1.unity
     guid: fa7875830330b6745ae5cf57db76edcb
   - enabled: 1
     path: Assets/Scenes/Tutorial.unity
@@ -39,14 +39,20 @@ EditorBuildSettings:
     path: Assets/Scenes/Scene_CJH.unity
     guid: 2004b304c0bef994594da2bdcf37a2d2
   - enabled: 1
-    path: Assets/Scenes/Scene_SoundSetting.unity
+    path: Assets/Scenes/Scene_SoundSetting1.unity
     guid: 250ad8ce36bd2994ca11a5beb2f6309c
   - enabled: 1
-    path: Assets/Scenes/Scene_MainTitle.unity
+    path: Assets/Scenes/Scene_MainTitle1.unity
     guid: fa7875830330b6745ae5cf57db76edcb
   - enabled: 1
     path: Assets/Scenes/Game.unity
     guid: 0dd81394597fcc94998dc1c2fb0848ab
+  - enabled: 1
+    path: Assets/Scenes/Scene_MainTitle.unity
+    guid: ae8a6e7d9cfd6b44e9009ec831f19681
+  - enabled: 1
+    path: Assets/Scenes/Scene_SoundSetting.unity
+    guid: d5133ef67043f0545bd08656a314af94
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ba99fe3a5e1f9aa42a5fa05d54cbeb3b,
       type: 2}
