@@ -16,7 +16,6 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
     public GameObject TutorialStuff;
     public GameObject ButtonStuff;
 
-
     public GameObject ResultSuccess;
     public GameObject ResultFail;
 
@@ -32,13 +31,21 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        InitializeTutorial();
+    }
+
+    void InitializeTutorial()
+    {
         ScriptTxt.text = "눈동자만 움직여보는 연습을 해볼께요";
         ButtonTxt1.text = "예";
         ButtonTxt2.text = "아니요";
+        clickCnt = 0;
+        ButtonFlag = false;
 
         CountTxt.text = countdownTime.ToString();
         CountBackground.SetActive(false);
         CountTxt.gameObject.SetActive(false);
+        ButtonStuff.SetActive(true);
     }
 
     // Update is called once per frame
@@ -55,6 +62,7 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
                     break;
                 case 2:
                     ScriptTxt.text = "그럼 준비 되었나요?";
+                    ButtonStuff.SetActive(true);
                     break;
                 default:
                     LeftRayInteractor.SetActive(false);
@@ -80,39 +88,18 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
             ButtonStuff.SetActive(false);
             CntUp();
         }
-        if (clickCnt == 4)
-        {
-            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
-        }
     }
+
     public void Button2()
     {
-        if (clickCnt == 5)
+        if (clickCnt == 2)
         {
             ButtonFlag = false;
             ButtonStuff.SetActive(false);
-            CntUp();
-        }
-        if (clickCnt == 4)
-        {
-            ButtonFlag = false;
-            CntUp();
+            InitializeTutorial();
         }
     }
-    public void Button3()
-    {
-        if (clickCnt == 5)
-        {
-            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
-        }
-    }
-    public void Button4()
-    {
-        if (clickCnt == 5)
-        {
-            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
-        }
-    }
+
     void ChangeImage()
     {
         Image textBoxImage = ScriptTxtBox.GetComponent<Image>();
@@ -126,10 +113,8 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
         }
     }
 
-
     IEnumerator CountdownTimer()
     {
-
         while (countdownTime > 0)
         {
             yield return new WaitForSeconds(1f);
@@ -140,10 +125,33 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
             {
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
-
-
-
         }
+
+        // 타이머가 끝났을 때 결과 표시
+        ShowResult();
+    }
+
+    void ShowResult()
+    {
+        if (countdownTime <= 0)
+        {
+            ResultFail.SetActive(true);
+        }
+        else
+        {
+            ResultSuccess.SetActive(true);
+        }
+
+        // 일정 시간 후에 결과를 숨기고 초기화
+        StartCoroutine(HideResultAfterDelay(3f));
+    }
+
+    IEnumerator HideResultAfterDelay(float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        ResultFail.SetActive(false);
+        ResultSuccess.SetActive(false);
+        InitializeTutorial();
     }
 
     IEnumerator ShakeText(float duration, float magnitude)
@@ -163,5 +171,4 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
 
         CountTxt.transform.localPosition = originalPos;
     }
-
 }
