@@ -5,30 +5,23 @@ using UnityEngine;
 public class Mission2 : MonoBehaviour
 {
     [SerializeField]
-    private GameObject[] toyCars = new GameObject[2];
+    private GameObject toyCars;
     [SerializeField]
-    private GameObject[] toyCows = new GameObject[2];
+    private GameObject toyCows;
     [SerializeField]
-    private GameObject[] toyDucks = new GameObject[2];
+    private GameObject toyDucks;
     [SerializeField]
-    private GameObject[] toySheep = new GameObject[2];
+    private GameObject toySheep;
     [SerializeField]
-    private GameObject[] toyTrains = new GameObject[2];
+    private GameObject toyTrains;
 
-    private GameObject[][] allToys;
+    private GameObject[] allToys;
     private List<string> toyTypes = new List<string>(); // 장난감 종류 저장 리스트: doll, ndoll
     private List<int> toySoundIndices = new List<int>(); // 장난감 소리 종류 저장 리스트: 1(비프음), 0(장난감 소리)
 
     private void Start()
     {
-        allToys = new GameObject[][] { toyCars, toyCows, toyDucks, toySheep, toyTrains };
-        foreach (GameObject[] toyArray in allToys)
-        {
-            foreach (GameObject toy in toyArray)
-            {
-                toy.SetActive(false);
-            }
-        }
+        allToys = new GameObject[] { toyCars, toyCows, toyDucks, toySheep, toyTrains };
     }
 
     public IEnumerator ActivateToysRandomly()
@@ -36,8 +29,8 @@ public class Mission2 : MonoBehaviour
         HashSet<GameObject> chosenToys = new HashSet<GameObject>();
         while (chosenToys.Count < 10)
         {
-            GameObject[] selectedArray = allToys[Random.Range(0, allToys.Length)];
-            GameObject selectedToy = selectedArray[Random.Range(0, selectedArray.Length)];
+            
+            GameObject selectedToy = allToys[Random.Range(0, allToys.Length)];
 
             if (chosenToys.Add(selectedToy))
             {
@@ -51,7 +44,7 @@ public class Mission2 : MonoBehaviour
                 }
 
                 // 장난감 종류 저장
-                if (ArrayContains(toyCars, selectedToy) || ArrayContains(toyTrains, selectedToy))
+                if (toyCars == selectedToy || toyTrains == selectedToy)
                 {
                     toyTypes.Add("ndoll");
                 }
