@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class OrganizeCar : MonoBehaviour
 {
-	private List<GameObject> carSpot = new List<GameObject>();
+	private List<GameObject> dollSpot = new List<GameObject>();
 
 	public int currentTurn = 0;
 
@@ -13,9 +13,9 @@ public class OrganizeCar : MonoBehaviour
 
 	void Start()
 	{
-		for (int i = 1; i <= 2; i++)
+		for (int i = 1; i <= 3; i++)
 		{
-			carSpot.Add(gameObject.transform.GetChild(i).gameObject);
+			dollSpot.Add(gameObject.transform.GetChild(i).gameObject);
 		}
 	}
 
@@ -26,7 +26,7 @@ public class OrganizeCar : MonoBehaviour
 
 	private void Organize(Collider other)
 	{
-		other.transform.parent = carSpot[currentTurn].transform;
+		other.transform.parent = dollSpot[currentTurn].transform;
 		currentTurn++;
 		other.transform.localPosition = Vector3.zero;
 		other.transform.localEulerAngles = Vector3.zero;
@@ -36,9 +36,9 @@ public class OrganizeCar : MonoBehaviour
 
 	private void OnTriggerEnter(Collider other)
 	{
-		if (other.CompareTag("Car") && !Manager.IsGrabGet())
+		if ((other.CompareTag("Car") || other.CompareTag("Animal")) && !Manager.IsGrabGet())
 		{
-			if (currentTurn < 2)
+			if (currentTurn < 3)
 				Organize(other);
 			else
 			{
@@ -56,9 +56,9 @@ public class OrganizeCar : MonoBehaviour
 
 	private void OnTriggerStay(Collider other)
 	{
-		if (other.CompareTag("Car") && !Manager.IsGrabGet())
+		if ((other.CompareTag("Car") || other.CompareTag("Animal")) && !Manager.IsGrabGet())
 		{
-			if (currentTurn < 2)
+			if (currentTurn < 3)
 				Organize(other);
 			else
 			{
