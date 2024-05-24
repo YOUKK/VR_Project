@@ -11,6 +11,7 @@ TagManager:
   - Cube
   - Animal
   - Car
+  - Dev Camara
   layers:
   - Default
   - TransparentFX
@@ -18,8 +19,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Highlight
+  - defaultPlate
   - 
   - 
   - 
