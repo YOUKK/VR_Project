@@ -3724,7 +3724,7 @@ MonoBehaviour:
   m_text: "\uC798\uD588\uC5B4! \uC774\uC81C \uB2E4\uC74C \uD14C\uC2A4\uD2B8\uB85C
     \uB118\uC5B4\uAC00\uC790\n\uC870\uAE08\uB9CC \uAE30\uB2E4\uB824\uC918~"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e884221a9a867848872460852fbf34b, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 334f41780016a774f985e4a8bc7b1144, type: 2}
   m_sharedMaterial: {fileID: 8174962356212508436, guid: 2e884221a9a867848872460852fbf34b,
     type: 2}
   m_fontSharedMaterials: []
@@ -3789,7 +3789,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &558714820
@@ -5430,11 +5430,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\uC67C\uCABD \uD14C\uC774\uBE14\uC758 \uD050\uBE0C\uB97C \n\uC624\uB978\uCABD
-    \uBC18\uC9DD\uC774\uB294 \uD14C\uC774\uBE14\uB85C \uC62E\uACA8\uC918"
+  m_text: "\uBA3C\uC800 \uC9D1\uAE30 \uD14C\uC2A4\uD2B8\uB97C \uD560\uAC70\uC57C\n\uC67C\uCABD
+    \uD14C\uC774\uBE14\uC758 \uD050\uBE0C\uB97C \uC624\uB978\uCABD \uD14C\uC774\uBE14\uB85C
+    \uC62E\uACA8\uC918"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 2e884221a9a867848872460852fbf34b, type: 2}
-  m_sharedMaterial: {fileID: 8174962356212508436, guid: 2e884221a9a867848872460852fbf34b,
+  m_fontAsset: {fileID: 11400000, guid: 334f41780016a774f985e4a8bc7b1144, type: 2}
+  m_sharedMaterial: {fileID: -4702011326894126154, guid: 334f41780016a774f985e4a8bc7b1144,
     type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
