@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class OrganizeCube : MonoBehaviour
 {
@@ -8,6 +9,8 @@ public class OrganizeCube : MonoBehaviour
     private GameObject Spot;
 	[SerializeField]
 	private GameObject SuccessText;
+	[SerializeField]
+	private GameObject bird;
 
     void Start()
     {
@@ -20,9 +23,19 @@ public class OrganizeCube : MonoBehaviour
         
     }
 
+	IEnumerator Delay()
+	{
+		yield return new WaitForSeconds(3.0f);
+		SceneManager.LoadScene("Eyetracking_Tutorial");
+	}
+
 	private void Success()
 	{
 		SuccessText.SetActive(true);
+		bird.SetActive(true);
+
+		// 3초 후 아이트래킹 튜토리얼 씬으로 전환
+		StartCoroutine(Delay());
 	}
 
 	private void Organize(Collider other)
