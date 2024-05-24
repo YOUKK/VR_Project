@@ -26,39 +26,37 @@ public class Mission2 : MonoBehaviour
 
     public IEnumerator ActivateToysRandomly()
     {
-        HashSet<GameObject> chosenToys = new HashSet<GameObject>();
-        while (chosenToys.Count < 10)
+        int count = 0;
+        while (count < 10)
         {
 
             GameObject selectedToy = allToys[Random.Range(0, allToys.Length)];
 
-            if (chosenToys.Add(selectedToy))
+            selectedToy.SetActive(true);
+
+            ToyAudio toyAudio = selectedToy.GetComponent<ToyAudio>();// ToyAudio 컴포넌트 가져오기
+            if (toyAudio != null)
             {
-                selectedToy.SetActive(true);
-
-                ToyAudio toyAudio = selectedToy.GetComponent<ToyAudio>();// ToyAudio 컴포넌트 가져오기
-                if (toyAudio != null)
-                {
-                    toyAudio.PlayRandomToySound();// 장난감 소리 or 비프음 중 랜덤으로 소리 재생
-                    toySoundIndices.Add(toyAudio.CurrentSoundIndex);// 소리 종류 리스트에 저장
-                }
-
-                // 장난감 종류 저장
-                if (toyCars == selectedToy || toyTrains == selectedToy)
-                {
-                    toyTypes.Add("ndoll");
-                }
-                else
-                {
-                    toyTypes.Add("doll");
-                }
-                Debug.Log("allToys: " + allToys.Length);
-                Debug.Log("장난감 종류 결과: " + string.Join(", ", toyTypes));
-                Debug.Log("장난감 소리 종류: " + string.Join(", ", toySoundIndices));
-
-                yield return new WaitForSeconds(4f);//4초
-                selectedToy.SetActive(false);
+                toyAudio.PlayRandomToySound();// 장난감 소리 or 비프음 중 랜덤으로 소리 재생
+                toySoundIndices.Add(toyAudio.CurrentSoundIndex);// 소리 종류 리스트에 저장
             }
+
+            // 장난감 종류 저장
+            if (toyCars == selectedToy || toyTrains == selectedToy)
+            {
+                toyTypes.Add("ndoll");
+            }
+            else
+            {
+                toyTypes.Add("doll");
+            }
+            Debug.Log("allToys: " + allToys.Length);
+            Debug.Log("장난감 종류 결과: " + string.Join(", ", toyTypes));
+            Debug.Log("장난감 소리 종류: " + string.Join(", ", toySoundIndices));
+
+            yield return new WaitForSeconds(4f);//4초
+            selectedToy.SetActive(false);
+            count++;
         }
 
         /*Debug.Log("장난감 종류 결과: " + string.Join(", ", toyTypes));
