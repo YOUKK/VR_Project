@@ -29,7 +29,7 @@ public class Mission2 : MonoBehaviour
         HashSet<GameObject> chosenToys = new HashSet<GameObject>();
         while (chosenToys.Count < 10)
         {
-            
+
             GameObject selectedToy = allToys[Random.Range(0, allToys.Length)];
 
             if (chosenToys.Add(selectedToy))
@@ -52,6 +52,7 @@ public class Mission2 : MonoBehaviour
                 {
                     toyTypes.Add("doll");
                 }
+                Debug.Log("allToys: " + allToys.Length);
                 Debug.Log("장난감 종류 결과: " + string.Join(", ", toyTypes));
                 Debug.Log("장난감 소리 종류: " + string.Join(", ", toySoundIndices));
 
