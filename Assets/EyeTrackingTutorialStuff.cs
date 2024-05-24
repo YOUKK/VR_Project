@@ -16,8 +16,6 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
     public GameObject TutorialStuff;
     public GameObject ButtonStuff;
 
-    private AudioSource[] audioSources;
-    public float delayBetweenSounds = 1.0f;
 
     public GameObject ResultSuccess;
     public GameObject ResultFail;
@@ -34,13 +32,9 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        ScriptTxt.text = "이제 두 번째 미션을 알려드릴게요.\n두 번째 미션은 [소리에 해당하는 장난감 분류하기]예요.";
-        ButtonTxt1.text = "왼쪽";
-        ButtonTxt2.text = "오른쪽";
-        ButtonTxt3.text = "오리 울음 소리";
-        ButtonTxt4.text = "소 울음 소리";
-
-        audioSources = this.gameObject.GetComponents<AudioSource>();
+        ScriptTxt.text = "눈동자만 움직여보는 연습을 해볼께요";
+        ButtonTxt1.text = "예";
+        ButtonTxt2.text = "아니요";
 
         CountTxt.text = countdownTime.ToString();
         CountBackground.SetActive(false);
@@ -57,10 +51,10 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
             switch (clickCnt)
             {
                 case 1:
-                    ScriptTxt.text = "동물 울음 소리가 들리면\n해당 동물은 오른쪽 바구니에 분류하고";
+                    ScriptTxt.text = "눈앞에 생기는 네모를 눈으로만 따라가주세요.";
                     break;
                 case 2:
-                    ScriptTxt.text = "신호음이 들리면\n 해당 동물을 오른쪽 바구니에 분류하세요\n";
+                    ScriptTxt.text = "그럼 준비 되었나요?";
                     break;
                 default:
                     LeftRayInteractor.SetActive(false);
@@ -76,17 +70,15 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
                     break;
             }
         }
-        if (ButtonFlag == true && clickCnt == 5)
-        {
-            StartCoroutine(PlaySoundsSequentially());
-        }
     }
 
     public void Button1()
     {
-        if (clickCnt == 5)
+        if (clickCnt == 2)
         {
-            ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            ButtonFlag = false;
+            ButtonStuff.SetActive(false);
+            CntUp();
         }
         if (clickCnt == 4)
         {
@@ -134,19 +126,6 @@ public class EyeTrackingTutorialStuff : MonoBehaviour
         }
     }
 
-    IEnumerator PlaySoundsSequentially()
-    {
-        foreach (AudioSource audioSource in audioSources)
-        {
-            audioSource.Play();
-            // 소리가 재생되는 동안 기다림
-            while (audioSource.isPlaying)
-            {
-                yield return null; // 다음 프레임까지 대기
-            }
-            yield return new WaitForSeconds(delayBetweenSounds);
-        }
-    }
 
     IEnumerator CountdownTimer()
     {

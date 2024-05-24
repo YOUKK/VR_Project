@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 using TMPro;
 using System.Runtime.Serialization;
 
@@ -160,7 +161,9 @@ public class Tutorial : MonoBehaviour
                 Debug.Log(countdownTime);
                 CountBackground.SetActive(false);
                 CountTxt.gameObject.SetActive(false);
-                break;
+                //5초뒤 씬전환
+                yield return new WaitForSeconds(5f);
+                SceneManager.LoadScene("Game2");
             }
             if (countdownTime == 0)
             {
@@ -168,9 +171,10 @@ public class Tutorial : MonoBehaviour
                 Debug.Log("실패");
                 CountBackground.SetActive(false);
                 CountTxt.gameObject.SetActive(false);
-
+                //5초뒤 씬전환
+                yield return new WaitForSeconds(5f);
+                SceneManager.LoadScene("Game2");
             }
-            
         }
     }
 
