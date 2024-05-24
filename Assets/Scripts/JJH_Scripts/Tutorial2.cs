@@ -37,6 +37,9 @@ public class Tutorial2 : MonoBehaviour
 
     public Mission2 mission2Script; // Mission2 스크립트를 참조 위한 필드 
 
+    [SerializeField]
+    private Animator birdAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -114,10 +117,12 @@ public class Tutorial2 : MonoBehaviour
         if (clickCnt == 5)
         {
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            birdAnimator.SetTrigger("No");
         }
         if (clickCnt == 4)
         {
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            birdAnimator.SetTrigger("No");
         }
     }
     public void Button2()
@@ -126,11 +131,13 @@ public class Tutorial2 : MonoBehaviour
         {
             ButtonFlag = false;
             ButtonStuff.SetActive(false);
+            birdAnimator.SetTrigger("Happy");
             CntUp();
         }
         if (clickCnt == 4)
         {
             ButtonFlag = false;
+            birdAnimator.SetTrigger("Happy");
             CntUp();
         }
     }
@@ -139,6 +146,7 @@ public class Tutorial2 : MonoBehaviour
         if (clickCnt == 5)
         {
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            birdAnimator.SetTrigger("No");
         }
     }
     public void Button4()
@@ -146,6 +154,7 @@ public class Tutorial2 : MonoBehaviour
         if (clickCnt == 5)
         {
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            birdAnimator.SetTrigger("No");
         }
     }
     void ChangeImage()

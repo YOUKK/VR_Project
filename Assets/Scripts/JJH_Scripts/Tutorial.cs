@@ -36,6 +36,9 @@ public class Tutorial : MonoBehaviour
 
     private MissionCheck missionCheckScript; // MissionCheck 스크립트 참조
 
+    [SerializeField]
+    private Animator birdAnimator;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -101,6 +104,7 @@ public class Tutorial : MonoBehaviour
         if(clickCnt == 5)
         {
             ScriptTxt.text = "오답입니다.\n다시한번 생각해보세요";
+            birdAnimator.SetTrigger("No");
         }
     }
     public void Button2()
@@ -108,6 +112,7 @@ public class Tutorial : MonoBehaviour
         if (clickCnt == 5)
         {
             ScriptTxt.text = "오답입니다.\n다시한번 생각해보세요";
+            birdAnimator.SetTrigger("No");
         }
     }
     public void Button3()
@@ -116,6 +121,7 @@ public class Tutorial : MonoBehaviour
         {
             ButtonFlag = false;
             ButtonStuff.SetActive(false);
+            birdAnimator.SetTrigger("Happy");
             CntUp();
         }
     }
@@ -124,6 +130,7 @@ public class Tutorial : MonoBehaviour
         if (clickCnt == 5)
         {
             ScriptTxt.text = "오답입니다.\n다시한번 생각해보세요";
+            birdAnimator.SetTrigger("No");
         }
     }
     void ChangeImage()
