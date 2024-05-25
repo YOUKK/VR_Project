@@ -3517,7 +3517,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: d52c42082daa9ca49bab2c8f40dabaad, type: 3}
+  m_audioClip: {fileID: 8300000, guid: cfaa3d13affc7b842bc7f7f1c84329d8, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -9513,10 +9513,12 @@ MonoBehaviour:
   ButtonStuff: {fileID: 0}
   ResultSuccess: {fileID: 0}
   ResultFail: {fileID: 0}
+  M1_score: 10
   ScriptTxtBox: {fileID: 0}
   newSprite: {fileID: 0}
   CountTxt: {fileID: 0}
   CountBackground: {fileID: 0}
+  birdAnimator: {fileID: 0}
 --- !u!114 &599877438
 MonoBehaviour:
   m_ObjectHideFlags: 0
