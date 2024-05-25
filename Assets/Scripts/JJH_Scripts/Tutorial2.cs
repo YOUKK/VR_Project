@@ -46,10 +46,6 @@ public class Tutorial2 : MonoBehaviour
     [SerializeField]
     private Animator birdAnimator;
 
-    [SerializeField]
-    private bucketRed bucketRed;
-    [SerializeField] 
-    private bucketBlue bucketBlue;
 
 
     // Start is called before the first frame update
@@ -220,31 +216,6 @@ public class Tutorial2 : MonoBehaviour
             {
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
-
-            //int sum1 = bucketRed.isAnswer.Sum();
-            //int sum2 = bucketBlue.isAnswer.Sum();
-
-            //if(sum1 + sum2 == 0)
-            //{
-            //    ResultSuccess.SetActive(true);
-            //    Debug.Log("성공");
-            //    Debug.Log(countdownTime);
-            //    CountBackground.SetActive(false);
-            //    CountTxt.gameObject.SetActive(false);
-            //    //5초뒤 씬전환
-            //    yield return new WaitForSeconds(5f);
-            //    SceneManager.LoadScene("Scenario1_Result");
-            //}
-            //if(countdownTime <= 0)
-            //{
-            //    ResultFail.SetActive(true);
-            //    Debug.Log("실패");
-            //    CountBackground.SetActive(false);
-            //    CountTxt.gameObject.SetActive(false);
-            //    //5초뒤 씬전환
-            //    yield return new WaitForSeconds(5f);
-            //    SceneManager.LoadScene("Scenario1_Result");
-            //}
 
             /*if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 2 &&
                 GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&

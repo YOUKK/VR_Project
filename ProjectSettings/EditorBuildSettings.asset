@@ -44,6 +44,9 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_SoundSetting.unity
     guid: d5133ef67043f0545bd08656a314af94
+  - enabled: 1
+    path: Assets/Scenes/Scene_Result.unity
+    guid: 4c5eb3d7bd20b6e428ffe0607c3e4f2f
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: ba99fe3a5e1f9aa42a5fa05d54cbeb3b,
       type: 2}
