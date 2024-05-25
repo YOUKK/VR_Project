@@ -80,7 +80,7 @@ public class Tutorial2 : MonoBehaviour
                     ScriptTxt.text = "만약 장난감 소리가 아닌 경고음이 들리면\n 해당 장난감을 바구니에 넣지 마세요.";
                     break;
                 case 3:
-                    ScriptTxt.text = "그럼 준비가 되었다면 우리 함께 시작해 볼까요?\n";
+                    ScriptTxt.text = "장난감은 책상 위에 나타날거에요.\n그럼 준비가 되었다면 우리 함께 시작해 볼까요?\n";
                     break;
                 case 4:
                     ScriptTxt.text = "여기서 잠깐!\n미션을 이해했는지 확인하려고 해요. \n동물을 어느 쪽에 분류하면 될까요?";
@@ -127,6 +127,7 @@ public class Tutorial2 : MonoBehaviour
             if (M2_score2 > 0) M2_score2 -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             Debug.Log("M2_score2:" + M2_score2);
+            M2_score2--;
             birdAnimator.SetTrigger("No");
         }
         if (clickCnt == 4)
@@ -134,6 +135,7 @@ public class Tutorial2 : MonoBehaviour
             if (M2_score1 > 0) M2_score1 -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             Debug.Log("M2_score1:" + M2_score1);
+            M2_score1--;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             birdAnimator.SetTrigger("No");
         }
@@ -163,6 +165,7 @@ public class Tutorial2 : MonoBehaviour
             if (M2_score2 > 0) M2_score2 -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             Debug.Log("M2_score2:" + M2_score2);
+            M2_score2--;
             birdAnimator.SetTrigger("No");
         }
     }
@@ -173,6 +176,7 @@ public class Tutorial2 : MonoBehaviour
             if(M2_score2 > 0) M2_score2 -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             Debug.Log("M2_score2:" + M2_score2);
+            M2_score2--;
             birdAnimator.SetTrigger("No");
         }
     }
@@ -239,6 +243,7 @@ public class Tutorial2 : MonoBehaviour
 
         }
         M2_score = M2_score1 + M2_score2;
+        TotalResult.mission2Quiz = M2_score;
         Debug.Log("총 점수(M2_score): " + M2_score);
     }
 

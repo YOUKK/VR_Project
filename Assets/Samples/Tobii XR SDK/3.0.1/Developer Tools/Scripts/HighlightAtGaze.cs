@@ -79,6 +79,7 @@ namespace Tobii.XR.Examples.DevTools
             {
                 _originalColor = highlightRenderer.material.color;
                 _targetColor = _originalColor;
+                Debug.Log($"Start 메서드 호출됨 - 원래 색상: {_originalColor}");
             }
         }
 
@@ -88,11 +89,15 @@ namespace Tobii.XR.Examples.DevTools
             {
                 if (highlightRenderer.material.HasProperty(_baseColor))
                 {
-                    highlightRenderer.material.SetColor(_baseColor, Color.Lerp(highlightRenderer.material.GetColor(_baseColor), _targetColor, Time.deltaTime * (1 / animationTime)));
+                    Color currentColor = highlightRenderer.material.GetColor(_baseColor);
+                    highlightRenderer.material.SetColor(_baseColor, Color.Lerp(currentColor, _targetColor, Time.deltaTime * (1 / animationTime)));
+                    Debug.Log($"Update - 현재 색상: {currentColor}, 목표 색상: {_targetColor}");
                 }
-                else 
+                else
                 {
-                    highlightRenderer.material.color = Color.Lerp(highlightRenderer.material.color, _targetColor, Time.deltaTime * (1 / animationTime));
+                    Color currentColor = highlightRenderer.material.color;
+                    highlightRenderer.material.color = Color.Lerp(currentColor, _targetColor, Time.deltaTime * (1 / animationTime));
+                    Debug.Log($"Update - 현재 색상: {currentColor}, 목표 색상: {_targetColor}");
                 }
             }
         }

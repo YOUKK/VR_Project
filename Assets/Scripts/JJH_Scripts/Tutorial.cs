@@ -106,6 +106,7 @@ public class Tutorial : MonoBehaviour
         {
             if (M1_score > 0) M1_score -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            M1_score--;
             Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
@@ -116,6 +117,7 @@ public class Tutorial : MonoBehaviour
         {
             if (M1_score > 0) M1_score -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            M1_score--;
             Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
@@ -128,6 +130,10 @@ public class Tutorial : MonoBehaviour
             ButtonStuff.SetActive(false);
             Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("Happy");
+
+            // 정답 맞추면 TotalResult에 값 전달
+            TotalResult.mission1Quiz = M1_score;
+
             CntUp();
         }
     }
@@ -137,6 +143,7 @@ public class Tutorial : MonoBehaviour
         {
             if (M1_score > 0) M1_score -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
+            M1_score--;
             Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
@@ -176,6 +183,10 @@ public class Tutorial : MonoBehaviour
                 Debug.Log(countdownTime);
                 CountBackground.SetActive(false);
                 CountTxt.gameObject.SetActive(false);
+                TotalResult.mission1CorrectItem = GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn +
+                                                  GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn +
+                                                  GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn;
+
                 //5초뒤 씬전환
                 yield return new WaitForSeconds(5f);
                 SceneManager.LoadScene("Game2");
@@ -186,6 +197,10 @@ public class Tutorial : MonoBehaviour
                 Debug.Log("실패");
                 CountBackground.SetActive(false);
                 CountTxt.gameObject.SetActive(false);
+                TotalResult.mission1CorrectItem = GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn +
+                                                  GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn +
+                                                  GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn;
+
                 //5초뒤 씬전환
                 yield return new WaitForSeconds(5f);
                 SceneManager.LoadScene("Game2");

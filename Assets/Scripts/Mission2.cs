@@ -39,6 +39,9 @@ public class Mission2 : MonoBehaviour
 
     public IEnumerator ActivateToysRandomly()
     {
+        // 미션 설명 텍스트가 없어지고 1초 뒤 미션 시작
+        yield return new WaitForSeconds(1f);
+
         int count = 0;
         while (count < 15)
         {
@@ -79,7 +82,9 @@ public class Mission2 : MonoBehaviour
                 int sum1 = bucketRed.isAnswer.Sum();
                 int sum2 = bucketBlue.isAnswer.Sum();
 
-                if (sum1 + sum2 == 0)
+                TotalResult.mission2CorrectItem = sum1 + sum2;
+
+                if (sum1 + sum2 == 15)
                 {
                     ResultSuccess.SetActive(true);
                     Debug.Log("성공");
@@ -100,6 +105,8 @@ public class Mission2 : MonoBehaviour
                     SceneManager.LoadScene("Scene_Result");
                 }
             }
+
+            yield break; // 코루틴 종료
         }
 
         /*Debug.Log("장난감 종류 결과: " + string.Join(", ", toyTypes));

@@ -8,63 +8,65 @@ public class OrganizeDish : MonoBehaviour
 
     public int currentTurn = 0;
 
-	[SerializeField]
-	private MissionCheck missionCheck;
+    [SerializeField]
+    private MissionCheck missionCheck;
 
-	void Start()
+    void Start()
     {
-        for(int i = 0; i < 21; i++)
-		{
+        for (int i = 0; i < 21; i++)
+        {
             dishesSpot.Add(gameObject.transform.GetChild(i).gameObject);
-		}
+        }
     }
 
     void Update()
     {
-        
+
     }
 
-	private void Organize(Collider other)
-	{
-		other.transform.parent = dishesSpot[currentTurn].transform;
-		currentTurn++;
-		other.transform.localPosition = Vector3.zero;
-		other.transform.localEulerAngles = Vector3.zero;
+    private void Organize(Collider other)
+    {
+        other.transform.parent = dishesSpot[currentTurn].transform;
+        currentTurn++;
+        other.transform.localPosition = Vector3.zero;
+        other.transform.localEulerAngles = Vector3.zero;
 
-		other.GetComponent<BoxCollider>().enabled = false;
-	}
+        other.GetComponent<BoxCollider>().enabled = false;
 
-	private void OnTriggerEnter(Collider other)
-	{
-		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
-		{
-			if (currentTurn < 21)
-				Organize(other);
-			else
-			{
-				currentTurn++;
-				other.gameObject.SetActive(false);
-			}
+        Debug.Log($"Organize - {other.gameObject.name} 위치 변경됨, 새로운 부모: {dishesSpot[currentTurn - 1].name}");
+    }
 
-			if (currentTurn >= 10)
-				missionCheck.DishCheckOn();
-		}
-	}
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Plate") && !Manager.IsGrabGet())
+        {
+            if (currentTurn < 21)
+                Organize(other);
+            else
+            {
+                currentTurn++;
+                other.gameObject.SetActive(false);
+            }
 
-	private void OnTriggerStay(Collider other)
-	{
-		if (other.CompareTag("Plate") && !Manager.IsGrabGet())
-		{
-			if (currentTurn < 21)
-				Organize(other);
-			else
-			{
-				currentTurn++;
-				other.gameObject.SetActive(false);
-			}
+            if (currentTurn >= 10)
+                missionCheck.DishCheckOn();
+        }
+    }
 
-			if (currentTurn >= 10)
-				missionCheck.DishCheckOn();
-		}
-	}
+    private void OnTriggerStay(Collider other)
+    {
+        if (other.CompareTag("Plate") && !Manager.IsGrabGet())
+        {
+            if (currentTurn < 21)
+                Organize(other);
+            else
+            {
+                currentTurn++;
+                other.gameObject.SetActive(false);
+            }
+
+            if (currentTurn >= 10)
+                missionCheck.DishCheckOn();
+        }
+    }
 }

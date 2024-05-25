@@ -61,4 +61,11 @@ public class TitleButtons : MonoBehaviour
             yield return null;
         }
     }
+
+    // 결과 화면에서 타이틀로 이동하는 함수
+    public void GoTitle()
+    {
+        SceneManager.LoadScene("Scene_MainTitle");
+    }
+
 }
