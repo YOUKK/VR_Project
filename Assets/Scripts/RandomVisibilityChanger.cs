@@ -1,10 +1,14 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RandomVisibilityChanger : MonoBehaviour
 {
     public GameObject[] objects;
     private int lastIndex = -1;
+    public static float totalTime = 0f; // 전역 변수 선언
+    public GameObject SuccessText; // 성공 메시지 오브젝트
+    public GameObject bird; // 새 오브젝트
 
     void Awake()
     {
@@ -62,6 +66,15 @@ public class RandomVisibilityChanger : MonoBehaviour
 
             // 3초 동안 대기
             yield return new WaitForSeconds(3f);
+
+            // totalTime이 3초 이상이면 성공 상태를 표시하고 "Game" 씬으로 전환
+            if (totalTime >= 3f)
+            {
+                Success();
+                yield return new WaitForSeconds(3f); // 3초 대기 후 씬 전환
+                SceneManager.LoadScene(2);
+                yield break;
+            }
         }
     }
 
@@ -74,5 +87,19 @@ public class RandomVisibilityChanger : MonoBehaviour
         } while (randomIndex == lastIndex);
 
         return randomIndex;
+    }
+
+    private void Success()
+    {
+        Debug.Log("Success 메서드 호출됨");
+
+        if (SuccessText != null)
+        {
+            SuccessText.SetActive(true); // 성공 메시지 표시
+        }
+        if (bird != null)
+        {
+            bird.SetActive(true); // 새 오브젝트 표시
+        }
     }
 }

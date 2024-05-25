@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_MainTitle1.unity
     guid: fa7875830330b6745ae5cf57db76edcb
   - enabled: 1
@@ -29,10 +29,10 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Scene_CJH.unity
     guid: 2004b304c0bef994594da2bdcf37a2d2
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_SoundSetting1.unity
     guid: 250ad8ce36bd2994ca11a5beb2f6309c
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Scene_MainTitle1.unity
     guid: fa7875830330b6745ae5cf57db76edcb
   - enabled: 1

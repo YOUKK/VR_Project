@@ -6,7 +6,7 @@ using UnityEngine;
 namespace Tobii.XR.Examples.GettingStarted
 {
     // Monobehaviour which implements the "IGazeFocusable" interface, meaning it will be called on when this object receives or loses focus
-    public class HighlightAtGaze : MonoBehaviour, IGazeFocusable
+    public class HighlightAtGazeTuto : MonoBehaviour, IGazeFocusable
     {
         private static readonly int _baseColor = Shader.PropertyToID("_BaseColor");
         public Color highlightColor = Color.red;
@@ -55,6 +55,13 @@ namespace Tobii.XR.Examples.GettingStarted
             else // old standard rendering pipeline
             {
                 _renderer.material.color = Color.Lerp(_renderer.material.color, _targetColor, Time.deltaTime * (1 / animationTime));
+            }
+
+            // 포커스가 잡힌 상태에서는 RandomVisibilityChanger.totalTime을 증가시킵니다.
+            if (isGazing)
+            {
+                RandomVisibilityChanger.totalTime += Time.deltaTime;
+                Debug.Log($"totalTime: {RandomVisibilityChanger.totalTime}");
             }
         }
     }

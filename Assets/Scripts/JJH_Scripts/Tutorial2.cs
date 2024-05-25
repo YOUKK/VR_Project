@@ -56,8 +56,8 @@ public class Tutorial2 : MonoBehaviour
     void Start()
     {
         ScriptTxt.text = "이제 두 번째 미션을 알려드릴게요.\n두 번째 미션은 [소리에 해당하는 장난감 분류하기]예요.";
-        ButtonTxt1.text = "빨간색 바구니";
-        ButtonTxt2.text = "파란색 바구니";
+        ButtonTxt1.text = "파란색 바구니";
+        ButtonTxt2.text = "빨간색 바구니";
         ButtonTxt3.text = "오리 울음 소리";
         ButtonTxt4.text = "소 울음 소리";
 
@@ -118,10 +118,10 @@ public class Tutorial2 : MonoBehaviour
                     break;
             }
         }
-        if(ButtonFlag == true && clickCnt == 5)
-        {
-            StartCoroutine(PlaySoundsSequentially());
-        }
+        //if(ButtonFlag == true && clickCnt == 5)
+        //{
+        //    StartCoroutine(PlaySoundsSequentially());
+        //}
     }
 
     public void Button1()
@@ -221,30 +221,30 @@ public class Tutorial2 : MonoBehaviour
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
 
-            int sum1 = bucketRed.isAnswer.Sum();
-            int sum2 = bucketBlue.isAnswer.Sum();
+            //int sum1 = bucketRed.isAnswer.Sum();
+            //int sum2 = bucketBlue.isAnswer.Sum();
 
-            if(sum1 + sum2 == 0)
-            {
-                ResultSuccess.SetActive(true);
-                Debug.Log("성공");
-                Debug.Log(countdownTime);
-                CountBackground.SetActive(false);
-                CountTxt.gameObject.SetActive(false);
-                //5초뒤 씬전환
-                yield return new WaitForSeconds(5f);
-                SceneManager.LoadScene("Scenario1_Result");
-            }
-            if(countdownTime <= 0)
-            {
-                ResultFail.SetActive(true);
-                Debug.Log("실패");
-                CountBackground.SetActive(false);
-                CountTxt.gameObject.SetActive(false);
-                //5초뒤 씬전환
-                yield return new WaitForSeconds(5f);
-                SceneManager.LoadScene("Scenario1_Result");
-            }
+            //if(sum1 + sum2 == 0)
+            //{
+            //    ResultSuccess.SetActive(true);
+            //    Debug.Log("성공");
+            //    Debug.Log(countdownTime);
+            //    CountBackground.SetActive(false);
+            //    CountTxt.gameObject.SetActive(false);
+            //    //5초뒤 씬전환
+            //    yield return new WaitForSeconds(5f);
+            //    SceneManager.LoadScene("Scenario1_Result");
+            //}
+            //if(countdownTime <= 0)
+            //{
+            //    ResultFail.SetActive(true);
+            //    Debug.Log("실패");
+            //    CountBackground.SetActive(false);
+            //    CountTxt.gameObject.SetActive(false);
+            //    //5초뒤 씬전환
+            //    yield return new WaitForSeconds(5f);
+            //    SceneManager.LoadScene("Scenario1_Result");
+            //}
 
             /*if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 2 &&
                 GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&
