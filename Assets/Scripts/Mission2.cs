@@ -49,7 +49,28 @@ public class Mission2 : MonoBehaviour
 
             GameObject selectedToy = allToys[Random.Range(0, allToys.Length)];
 
-            selectedToy.transform.position = new Vector3(3.270312f, 1.884282f, -1.77649f);
+            if(selectedToy == toyCars)
+            {
+                selectedToy.transform.position = new Vector3(3.334347f, 1.718282f, -1.759459f);
+                selectedToy.transform.rotation = Quaternion.Euler(new Vector3(-180, 0, 0));
+            }else if(selectedToy == toyCows)
+            {
+                selectedToy.transform.position = new Vector3(3.303551f, 1.854282f, -1.689112f);
+                selectedToy.transform.rotation = Quaternion.Euler(new Vector3(90, 180, 199.287f));
+            }else if(selectedToy == toyDucks)
+            {
+                selectedToy.transform.position = new Vector3(3.29226f, 1.815282f, -1.784569f);
+                selectedToy.transform.rotation = Quaternion.Euler(new Vector3(90, 180, -58.573f));
+            }else if (selectedToy == toyTrains)
+            {
+                selectedToy.transform.position = new Vector3(3.334347f, 1.758282f, -1.79446f);
+                selectedToy.transform.rotation = Quaternion.Euler(new Vector3(0, 0, 180));
+            }
+            else if (selectedToy == toySheep)
+            {
+                selectedToy.transform.position = new Vector3(3.270312f, 1.884282f, -1.77649f);
+                selectedToy.transform.rotation = Quaternion.Euler(new Vector3(90, 0, 117.789f));
+            }
 
             selectedToy.SetActive(true);
 
