@@ -46002,6 +46002,17 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 6262479593039127040, guid: 8822daa26bf3c824c968c42edcf7f7de,
+        type: 3}
+      propertyPath: m_text
+      value: "\uB098\uC774\uD504 5\uAC1C\uB97C \uB098\uC774\uD504 \uC815\uB9AC\uD568\uC5D0
+        \uC815\uB9AC\uD558\uC2DC\uC624"
+      objectReference: {fileID: 0}
+    - target: {fileID: 6262479593360699057, guid: 8822daa26bf3c824c968c42edcf7f7de,
+        type: 3}
+      propertyPath: m_text
+      value: "\uADF8\uB987 5\uAC1C\uB97C \uADF8\uB987 \uAC74\uC870\uB300\uC5D0 \uC815\uB9AC\uD558\uC2DC\uC624"
+      objectReference: {fileID: 0}
     - target: {fileID: 6262479593366607904, guid: 8822daa26bf3c824c968c42edcf7f7de,
         type: 3}
       propertyPath: missionck

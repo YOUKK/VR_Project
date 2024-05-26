@@ -45,7 +45,7 @@ public class OrganizeKnife : MonoBehaviour
 				other.gameObject.SetActive(false);
 			}
 
-			if(currentTurn >= 10)
+			if(currentTurn >= 5)
 			{
 				missionCheck.KnifeCheckOn();
 			}
@@ -65,7 +65,7 @@ public class OrganizeKnife : MonoBehaviour
 				other.gameObject.SetActive(false);
 			}
 
-			if (currentTurn >= 10)
+			if (currentTurn >= 5)
 			{
 				missionCheck.KnifeCheckOn();
 			}
