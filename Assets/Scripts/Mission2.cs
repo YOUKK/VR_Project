@@ -105,14 +105,12 @@ public class Mission2 : MonoBehaviour
                     SceneManager.LoadScene("Scene_Result");
                 }
             }
-
-            yield break; // 코루틴 종료
         }
 
         /*Debug.Log("장난감 종류 결과: " + string.Join(", ", toyTypes));
         Debug.Log("장난감 소리 종류: " + string.Join(", ", toySoundIndices));*/
 
-
+        yield break; // 코루틴 종료
     }
 
     private bool ArrayContains(GameObject[] array, GameObject item)

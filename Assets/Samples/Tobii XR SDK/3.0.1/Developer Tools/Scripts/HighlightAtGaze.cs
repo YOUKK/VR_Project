@@ -14,11 +14,11 @@ namespace Tobii.XR.Examples.DevTools
         private Color _originalColor;
         private Color _targetColor;
         private bool isHighlighted = false;
-
+         
         private static float lastGazeLeaveTime = 0; // 초기 값 설정
         private static GameObject lastGazedObject;
         private float gazeEnterTime;
-        private static string desktopPath = @"D:\\";
+        private static string desktopPath = @"C:\Users\emsys\Desktop";
         private static string csvFilePath = Path.Combine(desktopPath, "test.csv");
         private static bool fileHeaderWritten = false;
 
@@ -79,7 +79,6 @@ namespace Tobii.XR.Examples.DevTools
             {
                 _originalColor = highlightRenderer.material.color;
                 _targetColor = _originalColor;
-                Debug.Log($"Start 메서드 호출됨 - 원래 색상: {_originalColor}");
             }
         }
 
@@ -91,13 +90,11 @@ namespace Tobii.XR.Examples.DevTools
                 {
                     Color currentColor = highlightRenderer.material.GetColor(_baseColor);
                     highlightRenderer.material.SetColor(_baseColor, Color.Lerp(currentColor, _targetColor, Time.deltaTime * (1 / animationTime)));
-                    Debug.Log($"Update - 현재 색상: {currentColor}, 목표 색상: {_targetColor}");
                 }
                 else
                 {
                     Color currentColor = highlightRenderer.material.color;
                     highlightRenderer.material.color = Color.Lerp(currentColor, _targetColor, Time.deltaTime * (1 / animationTime));
-                    Debug.Log($"Update - 현재 색상: {currentColor}, 목표 색상: {_targetColor}");
                 }
             }
         }
