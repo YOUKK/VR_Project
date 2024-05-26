@@ -15201,6 +15201,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAnswer: 
   fxShine: {fileID: 1110859477}
+  mission2: {fileID: 1788743737}
 --- !u!1 &895862802
 GameObject:
   m_ObjectHideFlags: 0
@@ -20871,6 +20872,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   isAnswer: 
   fxShine: {fileID: 123066156}
+  mission2: {fileID: 1788743737}
 --- !u!1001 &1259952842
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -38574,6 +38576,7 @@ MonoBehaviour:
   toyDucks: {fileID: 587865047}
   toySheep: {fileID: 1564020362}
   toyTrains: {fileID: 333406358}
+  isBeep: 0
   bucketRed: {fileID: 1256538212}
   bucketBlue: {fileID: 887851570}
   ResultSuccess: {fileID: 351767966}

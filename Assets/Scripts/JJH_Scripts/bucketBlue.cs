@@ -1,25 +1,42 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Reflection;
 using UnityEngine;
 
 public class bucketBlue : MonoBehaviour
 {
 	public List<int> isAnswer = new List<int>();
+    public int missCount = 0;
 
     [SerializeField]
     private GameObject fxShine;
 
+    [SerializeField]
+    private Mission2 mission2;
+
     private void OnTriggerEnter(Collider other)
-	{
-		if (other.gameObject.name == "Train" || other.gameObject.name == "Car")
+    {
+        // Á¤´ä
+        if (other.gameObject.name == "Train" || other.gameObject.name == "Car")
 		{
-			isAnswer.Add(1);
+            if(mission2.isBeep == 1)
+            {
+                missCount++;
+                isAnswer.Add(0);
+            }else
+            {
+			    isAnswer.Add(1);
+            }
             StartCoroutine(shine());
             other.gameObject.SetActive(false);
 		}
         else if(other.gameObject.name == "Cow" || other.gameObject.name == "Sheep" || other.gameObject.name == "Duck")
         {
-			isAnswer.Add(0);
+            if (mission2.isBeep == 1)
+            {
+                missCount++;
+            }
+            isAnswer.Add(0);
 			other.gameObject.SetActive(false);
 		}
 		Debug.Log("isAnswer: " + string.Join(", ", isAnswer));

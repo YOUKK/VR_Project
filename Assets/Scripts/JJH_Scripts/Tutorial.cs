@@ -27,13 +27,13 @@ public class Tutorial : MonoBehaviour
 
     int clickCnt = 0;
     bool ButtonFlag = false;
-    public int M1_score = 10;
+    public int M1_score = 8;
 
     public GameObject ScriptTxtBox;
     public Sprite newSprite;
     public TextMeshProUGUI CountTxt;
     public GameObject CountBackground;
-    private int countdownTime = 60;
+    private int countdownTime = 90;
 
     private MissionCheck missionCheckScript; // MissionCheck 스크립트 참조
 
@@ -107,6 +107,7 @@ public class Tutorial : MonoBehaviour
             if (M1_score > 0) M1_score -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             M1_score--;
+            TotalResult.clickNum++;
             Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
@@ -118,6 +119,7 @@ public class Tutorial : MonoBehaviour
             if (M1_score > 0) M1_score -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             M1_score--;
+            TotalResult.clickNum++;
             Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
@@ -130,6 +132,7 @@ public class Tutorial : MonoBehaviour
             ButtonStuff.SetActive(false);
             Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("Happy");
+            TotalResult.clickNum++;
 
             // 정답 맞추면 TotalResult에 값 전달
             TotalResult.mission1Quiz = M1_score;
@@ -144,6 +147,7 @@ public class Tutorial : MonoBehaviour
             if (M1_score > 0) M1_score -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             M1_score--;
+            TotalResult.clickNum++;
             Debug.Log("M1_score:" + M1_score);
             birdAnimator.SetTrigger("No");
         }
@@ -174,9 +178,10 @@ public class Tutorial : MonoBehaviour
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
 
-            if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 2 &&
-                GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 0 &&
-                GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn == 0)
+            if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 5 &&
+                GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 5 &&
+                GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().forkNum == 5 &&
+                GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().spoonNum == 5)
             {
                 ResultSuccess.SetActive(true);
                 Debug.Log("성공");

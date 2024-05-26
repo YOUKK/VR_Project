@@ -22,6 +22,7 @@ public class Mission2 : MonoBehaviour
     private GameObject[] allToys;
     private List<string> toyTypes = new List<string>(); // 장난감 종류 저장 리스트: doll, ndoll
     private List<int> toySoundIndices = new List<int>(); // 장난감 소리 종류 저장 리스트: 1(비프음), 0(장난감 소리)
+    public int isBeep = 0;
 
     [SerializeField]
     private bucketRed bucketRed;
@@ -56,7 +57,8 @@ public class Mission2 : MonoBehaviour
             if (toyAudio != null)
             {
                 toyAudio.PlayRandomToySound();// 장난감 소리 or 비프음 중 랜덤으로 소리 재생
-                toySoundIndices.Add(toyAudio.CurrentSoundIndex);// 소리 종류 리스트에 저장
+                isBeep = toyAudio.CurrentSoundIndex;
+                toySoundIndices.Add(isBeep);// 소리 종류 리스트에 저장
             }
 
             // 장난감 종류 저장
@@ -81,10 +83,12 @@ public class Mission2 : MonoBehaviour
             {
                 int sum1 = bucketRed.isAnswer.Sum();
                 int sum2 = bucketBlue.isAnswer.Sum();
+                int sum3 = toySoundIndices.Sum();
 
-                TotalResult.mission2CorrectItem = sum1 + sum2;
+                int total = sum1 + sum2 + sum3 - bucketBlue.missCount - bucketRed.missCount;
+                TotalResult.mission2CorrectItem = total;
 
-                if (sum1 + sum2 == 15)
+                if (total == 15)
                 {
                     ResultSuccess.SetActive(true);
                     Debug.Log("성공");

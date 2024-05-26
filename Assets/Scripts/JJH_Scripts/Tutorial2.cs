@@ -31,8 +31,8 @@ public class Tutorial2 : MonoBehaviour
 
     int clickCnt = 0;
     bool ButtonFlag = false;
-    public int M2_score1 = 5;
-    public int M2_score2 = 5;
+    public int M2_score1 = 4;
+    public int M2_score2 = 8;
     public int M2_score = 0;
 
     public GameObject ScriptTxtBox;
@@ -128,6 +128,7 @@ public class Tutorial2 : MonoBehaviour
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             Debug.Log("M2_score2:" + M2_score2);
             M2_score2--;
+            TotalResult.clickNum++;
             birdAnimator.SetTrigger("No");
         }
         if (clickCnt == 4)
@@ -136,6 +137,7 @@ public class Tutorial2 : MonoBehaviour
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             Debug.Log("M2_score1:" + M2_score1);
             M2_score1--;
+            TotalResult.clickNum++;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             birdAnimator.SetTrigger("No");
         }
@@ -147,6 +149,7 @@ public class Tutorial2 : MonoBehaviour
             ButtonFlag = false;
             ButtonStuff.SetActive(false);
             birdAnimator.SetTrigger("Happy");
+            TotalResult.clickNum++;
             CntUp();
             Debug.Log("M2_score2:" + M2_score2);
         }
@@ -154,6 +157,7 @@ public class Tutorial2 : MonoBehaviour
         {
             ButtonFlag = false;
             birdAnimator.SetTrigger("Happy");
+            TotalResult.clickNum++;
             CntUp();
             Debug.Log("M2_score1:" + M2_score1);
         }
@@ -165,6 +169,7 @@ public class Tutorial2 : MonoBehaviour
             if (M2_score2 > 0) M2_score2 -= 1;
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             Debug.Log("M2_score2:" + M2_score2);
+            TotalResult.clickNum++;
             M2_score2--;
             birdAnimator.SetTrigger("No");
         }
@@ -177,6 +182,7 @@ public class Tutorial2 : MonoBehaviour
             ScriptTxt.text = "오답입니다. 다시한번 생각해보세요";
             Debug.Log("M2_score2:" + M2_score2);
             M2_score2--;
+            TotalResult.clickNum++;
             birdAnimator.SetTrigger("No");
         }
     }
