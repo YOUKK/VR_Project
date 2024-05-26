@@ -48,7 +48,7 @@ public class OrganizeDish : MonoBehaviour
                 other.gameObject.SetActive(false);
             }
 
-            if (currentTurn >= 10)
+            if (currentTurn >= 5)
                 missionCheck.DishCheckOn();
         }
     }
@@ -65,7 +65,7 @@ public class OrganizeDish : MonoBehaviour
                 other.gameObject.SetActive(false);
             }
 
-            if (currentTurn >= 10)
+            if (currentTurn >= 5)
                 missionCheck.DishCheckOn();
         }
     }
