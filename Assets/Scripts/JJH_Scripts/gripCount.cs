@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.XR;
@@ -7,13 +8,14 @@ using UnityEngine.XR.Interaction.Toolkit;
 
 public class gripCount : MonoBehaviour
 {
-    //[SerializeField] public XRController leftController = null;
     [SerializeField] private InputActionReference leftSelectRef;
     [SerializeField] private InputActionReference leftActivateRef;
     [SerializeField] private InputActionReference rightSelectRef;
     [SerializeField] private InputActionReference rightActivateRef;
     [SerializeField] private InputActionAsset actionAsset;
-    private int countClick = 0;
+
+    [SerializeField]
+    private TotalResult TotalResult;
 
     private void OnEnable()
     {
@@ -36,22 +38,22 @@ public class gripCount : MonoBehaviour
 
     private void SelectLeft(InputAction.CallbackContext obj)
     {
-        countClick++;
-        Debug.Log("ClcickCount: " + countClick);
+        TotalResult.buttonClickNum++;
+        Debug.Log("ClickCount: " + TotalResult.buttonClickNum);
     }
     private void ActivateLeft(InputAction.CallbackContext obj)
     {
-        countClick++;
-        Debug.Log("ClcickCount: " + countClick);
+        TotalResult.buttonClickNum++;
+        Debug.Log("ClickCount: " + TotalResult.buttonClickNum);
     }
     private void SelectRight(InputAction.CallbackContext obj)
     {
-        countClick++;
-        Debug.Log("ClcickCount: " + countClick);
+        TotalResult.buttonClickNum++;
+        Debug.Log("ClickCount: " + TotalResult.buttonClickNum);
     }
     private void ActivateRight(InputAction.CallbackContext obj)
     {
-        countClick++;
-        Debug.Log("ClcickCount: " + countClick);
+        TotalResult.buttonClickNum++;
+        Debug.Log("ClickCount: " + TotalResult.buttonClickNum);
     }
 }

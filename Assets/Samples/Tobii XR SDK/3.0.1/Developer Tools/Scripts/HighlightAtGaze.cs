@@ -6,6 +6,8 @@ namespace Tobii.XR.Examples.DevTools
 {
     public class HighlightAtGaze : MonoBehaviour, IGazeFocusable
     {
+        
+
         private static readonly int _baseColor = Shader.PropertyToID("_BaseColor");
         public Color highlightColor = Color.red;
         public float animationTime = 0.1f;
@@ -14,7 +16,7 @@ namespace Tobii.XR.Examples.DevTools
         private Color _originalColor;
         private Color _targetColor;
         private bool isHighlighted = false;
-         
+
         private static float lastGazeLeaveTime = 0; // 초기 값 설정
         private static GameObject lastGazedObject;
         private float gazeEnterTime;
@@ -22,11 +24,12 @@ namespace Tobii.XR.Examples.DevTools
         private static string csvFilePath = Path.Combine(desktopPath, "test.csv");
         private static bool fileHeaderWritten = false;
 
+
         private void AppendToCSV(string objectName, float gazeTransitionTime, float gazeDuration, Vector3 position)
         {
             if (!File.Exists(csvFilePath) || !fileHeaderWritten)
             {
-                File.WriteAllText(csvFilePath, "ObjectName,gazeTransitionTime,gazeDuration,X,Y,Z\n");
+                File.WriteAllText(csvFilePath, "ObjectName,gazeTransitionTime,gazeDuration,X,Y,Z,clickCount\n");
                 fileHeaderWritten = true;
             }
 

@@ -41,7 +41,7 @@ public class OrganizeKnife : MonoBehaviour
 				Organize(other);
 			else
 			{
-				currentTurn++;
+				//currentTurn++;
 				other.gameObject.SetActive(false);
 			}
 
@@ -61,7 +61,7 @@ public class OrganizeKnife : MonoBehaviour
 				Organize(other);
 			else
 			{
-				currentTurn++;
+				//currentTurn++;
 				other.gameObject.SetActive(false);
 			}
 

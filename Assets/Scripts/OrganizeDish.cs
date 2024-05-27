@@ -27,9 +27,10 @@ public class OrganizeDish : MonoBehaviour
     private void Organize(Collider other)
     {
         other.transform.parent = dishesSpot[currentTurn].transform;
-        currentTurn++;
         other.transform.localPosition = Vector3.zero;
         other.transform.localEulerAngles = Vector3.zero;
+
+        if (currentTurn < 5) currentTurn++;
 
         other.GetComponent<BoxCollider>().enabled = false;
 
@@ -44,7 +45,7 @@ public class OrganizeDish : MonoBehaviour
                 Organize(other);
             else
             {
-                currentTurn++;
+                //currentTurn++;
                 other.gameObject.SetActive(false);
             }
 

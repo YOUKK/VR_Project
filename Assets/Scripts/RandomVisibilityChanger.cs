@@ -9,7 +9,7 @@ public class RandomVisibilityChanger : MonoBehaviour
     public static float totalTime = 0f; // 전역 변수 선언
     public GameObject SuccessText; // 성공 메시지 오브젝트
     public GameObject bird; // 새 오브젝트
-
+    public Animator birdAnimator;
     void Awake()
     {
         // 처음에는 모든 오브젝트를 숨깁니다.
@@ -99,6 +99,7 @@ public class RandomVisibilityChanger : MonoBehaviour
         }
         if (bird != null)
         {
+            birdAnimator.SetTrigger("Happy");
             bird.SetActive(true); // 새 오브젝트 표시
         }
     }
