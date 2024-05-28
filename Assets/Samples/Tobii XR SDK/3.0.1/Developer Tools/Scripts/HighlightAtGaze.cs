@@ -6,8 +6,6 @@ namespace Tobii.XR.Examples.DevTools
 {
     public class HighlightAtGaze : MonoBehaviour, IGazeFocusable
     {
-        
-
         private static readonly int _baseColor = Shader.PropertyToID("_BaseColor");
         public Color highlightColor = Color.red;
         public float animationTime = 0.1f;
@@ -23,7 +21,6 @@ namespace Tobii.XR.Examples.DevTools
         private static string desktopPath = @"C:\Users\emsys\Desktop";
         private static string csvFilePath = Path.Combine(desktopPath, "test.csv");
         private static bool fileHeaderWritten = false;
-
 
         private void AppendToCSV(string objectName, float gazeTransitionTime, float gazeDuration, Vector3 position)
         {
@@ -46,7 +43,15 @@ namespace Tobii.XR.Examples.DevTools
 
             if (hasFocus)
             {
-                Debug.Log($"포커스 됨: {currentObjectName} 저장, 위치: {currentPosition}");
+                float gazeTransitionTime = Time.time - lastGazeLeaveTime;
+
+                if (lastGazedObject != null && lastGazedObject != this.gameObject)
+                {
+                    // 이전 객체에서 현재 객체로의 전환 시간 계산
+                    AppendToCSV(lastGazedObject.name, gazeTransitionTime, 0, lastGazedObject.transform.position);
+                }
+
+                Debug.Log($"포커스 됨: {currentObjectName} 저장, 위치: {currentPosition}, 전환 시간: {gazeTransitionTime}");
                 gazeEnterTime = Time.time;
                 lastGazedObject = gameObject;
                 isHighlighted = true;
@@ -55,17 +60,13 @@ namespace Tobii.XR.Examples.DevTools
             else
             {
                 float gazeDuration = Time.time - gazeEnterTime;
-                float gazeTransitionTime = 0f;
-                if (lastGazedObject != null && lastGazedObject == this.gameObject)
-                {
-                    gazeTransitionTime = gazeEnterTime - lastGazeLeaveTime;
-                }
-                lastGazeLeaveTime = Time.time;
+                float gazeTransitionTime = Time.time - lastGazeLeaveTime;
 
                 Debug.Log($"포커스 잃음: {currentObjectName} 저장, 위치: {currentPosition}, 응시 시간: {gazeDuration}, 전환 시간: {gazeTransitionTime}");
 
                 AppendToCSV(currentObjectName, gazeTransitionTime, gazeDuration, currentPosition);
 
+                lastGazeLeaveTime = Time.time;
                 lastGazedObject = null;
                 isHighlighted = false;
                 _targetColor = _originalColor;

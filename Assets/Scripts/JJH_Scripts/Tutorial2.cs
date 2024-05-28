@@ -23,7 +23,7 @@ public class Tutorial2 : MonoBehaviour
     public GameObject Button3_;
     public GameObject Button4_;
 
-    private AudioSource[] audioSources;
+    private AudioSource audioSources;
     public float delayBetweenSounds = 1.0f;
 
     public GameObject ResultSuccess;
@@ -57,7 +57,7 @@ public class Tutorial2 : MonoBehaviour
         ButtonTxt3.text = "오리 울음 소리";
         ButtonTxt4.text = "소 울음 소리";
 
-        audioSources = this.gameObject.GetComponents<AudioSource>();
+        audioSources = this.gameObject.GetComponent<AudioSource>();
 
         CountTxt.text = countdownTime.ToString();
         CountBackground.SetActive(false);
@@ -114,10 +114,11 @@ public class Tutorial2 : MonoBehaviour
                     break;
             }
         }
-        //if(ButtonFlag == true && clickCnt == 5)
-        //{
-        //    StartCoroutine(PlaySoundsSequentially());
-        //}
+        if (ButtonFlag == true && clickCnt == 5)
+        {
+            audioSources.Play();
+            //StartCoroutine(PlaySoundsSequentially());
+        }
     }
 
     public void Button1()
@@ -199,19 +200,20 @@ public class Tutorial2 : MonoBehaviour
         }
     }
 
-    IEnumerator PlaySoundsSequentially()
-    {
-        foreach (AudioSource audioSource in audioSources)
-        {
-            audioSource.Play();
-            // 소리가 재생되는 동안 기다림
-            while (audioSource.isPlaying)
-            {
-                yield return null; // 다음 프레임까지 대기
-            }
-            yield return new WaitForSeconds(delayBetweenSounds);
-        }
-    }
+    //IEnumerator PlaySoundsSequentially()
+    //{
+
+        //foreach (AudioSource audioSource in audioSources)
+        //{
+        //    audioSource.Play();
+        //    // 소리가 재생되는 동안 기다림
+        //    while (audioSource.isPlaying)
+        //    {
+        //        yield return null; // 다음 프레임까지 대기
+        //    }
+        //    yield return new WaitForSeconds(delayBetweenSounds);
+        //}
+    //}
 
     IEnumerator CountdownTimer()
     {

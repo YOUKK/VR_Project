@@ -178,38 +178,69 @@ public class Tutorial : MonoBehaviour
                 StartCoroutine(ShakeText(0.5f, 0.1f));
             }
 
-            if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 5 &&
-                GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 5 &&
-                GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().forkNum == 5 &&
-                GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().spoonNum == 5)
+            // 시간 끝나기 전에 모두 완성
+            if(GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 5 &&
+                                  GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 5 &&
+                                  GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().forkNum == 5 &&
+                                  GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().spoonNum == 5)
             {
+                TotalResult.mission1CorrectItem = GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn +
+                  GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn +
+                  GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn;
+
                 ResultSuccess.SetActive(true);
                 Debug.Log("성공");
                 Debug.Log(countdownTime);
                 CountBackground.SetActive(false);
                 CountTxt.gameObject.SetActive(false);
-                TotalResult.mission1CorrectItem = GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn +
-                                                  GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn +
-                                                  GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn;
 
                 //5초뒤 씬전환
                 yield return new WaitForSeconds(5f);
                 SceneManager.LoadScene("Game2");
+
+
+                yield break;
             }
-            if (countdownTime == 0)
+
+            // 시간이 모두 종료된 경우
+            if(countdownTime <= 0)
             {
-                ResultFail.SetActive(true);
-                Debug.Log("실패");
-                CountBackground.SetActive(false);
-                CountTxt.gameObject.SetActive(false);
                 TotalResult.mission1CorrectItem = GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn +
-                                                  GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn +
-                                                  GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn;
+                                  GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn +
+                                  GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().currentTurn;
 
-                //5초뒤 씬전환
-                yield return new WaitForSeconds(5f);
-                SceneManager.LoadScene("Game2");
+                if (TotalResult.mission1CorrectItem >= 16)
+                {
+                    ResultSuccess.SetActive(true);
+                    Debug.Log("성공");
+                    Debug.Log(countdownTime);
+                    CountBackground.SetActive(false);
+                    CountTxt.gameObject.SetActive(false);
+
+                    //5초뒤 씬전환
+                    yield return new WaitForSeconds(5f);
+                    SceneManager.LoadScene("Game2");
+                }
+                else
+                {
+                    ResultFail.SetActive(true);
+                    Debug.Log("실패");
+                    CountBackground.SetActive(false);
+                    CountTxt.gameObject.SetActive(false);
+
+
+                    //5초뒤 씬전환
+                    yield return new WaitForSeconds(5f);
+                    SceneManager.LoadScene("Game2");
+                }
+
             }
+
+            //if (GameObject.Find("dish-drainer").GetComponent<OrganizeDish>().currentTurn == 5 &&
+            //    GameObject.Find("knife-block").GetComponent<OrganizeKnife>().currentTurn == 5 &&
+            //    GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().forkNum == 5 &&
+            //    GameObject.Find("Sink").GetComponent<OrganizeSpoonFork>().spoonNum == 5)
+            
         }
         Debug.Log("총 점수(M1_score):" + M1_score);
     }
