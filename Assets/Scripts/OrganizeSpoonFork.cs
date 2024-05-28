@@ -6,6 +6,7 @@ public class OrganizeSpoonFork : MonoBehaviour
 {
     private List<GameObject> SFSpot = new List<GameObject>(); // Spoon Fork
 
+	public int index = 0; // SFSpot의 인덱스로 쓸 값
     public int currentTurn = 0; // forkNum + spoonNum
 	public int forkNum = 0;
 	public int spoonNum = 0;
@@ -28,11 +29,9 @@ public class OrganizeSpoonFork : MonoBehaviour
 
 	private void Organize(Collider other)
 	{
-		other.transform.parent = SFSpot[currentTurn].transform;
+		other.transform.parent = SFSpot[index].transform;
 		other.transform.localPosition = Vector3.zero;
 		other.transform.localEulerAngles = Vector3.zero;
-
-		if(currentTurn < 5) currentTurn++;
 
         other.GetComponent<BoxCollider>().enabled = false;
 	}
@@ -41,7 +40,7 @@ public class OrganizeSpoonFork : MonoBehaviour
 	{
 		if ((other.CompareTag("Spoon") || other.CompareTag("Fork")) && !Manager.IsGrabGet())
 		{
-			if (currentTurn < 11)
+			if (index < 11)
 				Organize(other);
 			else
 			{
@@ -57,6 +56,12 @@ public class OrganizeSpoonFork : MonoBehaviour
 
 			if (spoonNum >= 5 && forkNum >= 5)
 				missionCheck.SFCheckOn();
+
+			int under5Spoon = spoonNum, under5Fork = forkNum;
+			if (spoonNum > 5) under5Spoon = 5;
+			if (forkNum > 5) under5Fork = 5;
+
+			currentTurn = under5Spoon + under5Fork;
 		}
 	}
 
@@ -64,7 +69,7 @@ public class OrganizeSpoonFork : MonoBehaviour
 	{
 		if ((other.CompareTag("Spoon") || other.CompareTag("Fork")) && !Manager.IsGrabGet())
 		{
-			if (currentTurn < 11)
+			if (index < 11)
 				Organize(other);
 			else
 			{
@@ -80,6 +85,12 @@ public class OrganizeSpoonFork : MonoBehaviour
 
 			if (spoonNum >= 5 && forkNum >= 5)
 				missionCheck.SFCheckOn();
+
+			int under5Spoon = spoonNum, under5Fork = forkNum;
+			if (spoonNum > 5) under5Spoon = 5;
+			if (forkNum > 5) under5Fork = 5;
+
+			currentTurn = under5Spoon + under5Fork;
 		}
 	}
 }
