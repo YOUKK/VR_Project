@@ -33,6 +33,8 @@ public class OrganizeSpoonFork : MonoBehaviour
 		other.transform.localPosition = Vector3.zero;
 		other.transform.localEulerAngles = Vector3.zero;
 
+		index++;
+
         other.GetComponent<BoxCollider>().enabled = false;
 	}
 
