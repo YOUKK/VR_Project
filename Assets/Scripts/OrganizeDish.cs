@@ -6,7 +6,8 @@ public class OrganizeDish : MonoBehaviour
 {
     private List<GameObject> dishesSpot = new List<GameObject>(); // 접시가 정리될 위치를 구할 접시들
 
-    public int currentTurn = 0;
+    public int currentTurn = 0; // 현재 정리한 개수, 최대 5까지 카운트
+    public int index = 0; // dishesSpot의 인덱스로 쓸 값
 
     [SerializeField]
     private MissionCheck missionCheck;
@@ -26,22 +27,23 @@ public class OrganizeDish : MonoBehaviour
 
     private void Organize(Collider other)
     {
-        other.transform.parent = dishesSpot[currentTurn].transform;
+        other.transform.parent = dishesSpot[index].transform;
         other.transform.localPosition = Vector3.zero;
         other.transform.localEulerAngles = Vector3.zero;
 
+        index++;
         if (currentTurn < 5) currentTurn++;
 
         other.GetComponent<BoxCollider>().enabled = false;
 
-        Debug.Log($"Organize - {other.gameObject.name} 위치 변경됨, 새로운 부모: {dishesSpot[currentTurn - 1].name}");
+        Debug.Log($"Organize - {other.gameObject.name} 위치 변경됨, 새로운 부모: {dishesSpot[index - 1].name}");
     }
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Plate") && !Manager.IsGrabGet())
         {
-            if (currentTurn < 21)
+            if (index < 21)
                 Organize(other);
             else
             {
@@ -49,7 +51,7 @@ public class OrganizeDish : MonoBehaviour
                 other.gameObject.SetActive(false);
             }
 
-            if (currentTurn >= 5)
+            if (index >= 5)
                 missionCheck.DishCheckOn();
         }
     }
@@ -58,15 +60,15 @@ public class OrganizeDish : MonoBehaviour
     {
         if (other.CompareTag("Plate") && !Manager.IsGrabGet())
         {
-            if (currentTurn < 21)
+            if (index < 21)
                 Organize(other);
             else
             {
-                currentTurn++;
+                //currentTurn++;
                 other.gameObject.SetActive(false);
             }
 
-            if (currentTurn >= 5)
+            if (index >= 5)
                 missionCheck.DishCheckOn();
         }
     }
